@@ -1,0 +1,188 @@
+h1 {
+    color: grey;
+    
+    font-size: 300%;
+    text-align: center;
+}
+h2
+{
+	 color: grey;
+	 font-family: 'Muli', sans-serif;
+	 font-size: 200%;
+     padding: 1em;
+     margin-left: 155px;
+
+}
+h3{
+    color: grey;
+     font-family:'Muli', sans-serif;;
+     font-size: 70%;
+     
+     
+}
+h4{
+    color: white;
+    font-size: 80%;
+}
+h5
+{
+     color: grey;
+     font-family: 'Amatic SC', cursive;
+     font-size: 145%;
+     
+     margin-left: 182px;
+     padding-bottom: -10px;
+
+}
+h6{
+    color:white;
+    font-family: 'Amatic SC', cursive;
+    text-align: right;
+}
+
+h7{
+       color: grey;
+    
+    font-size: 100%;
+    text-align: center;
+}
+
+body {
+    background-color: white;
+    margin:0;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+
+}
+
+header {
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: white;
+    clear: left;
+
+    
+
+}
+footer {
+
+    position: fixed;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    padding:20px;
+    margin: 0;
+    color: white;
+    background-color: #77BFC7;
+    clear: left;
+
+    
+
+}
+logo{
+    overflow: hidden;
+    display: block;
+    margin:0;
+    padding: 0;
+}
+login
+{
+    align-content: center;
+    
+    
+}
+
+
+article {
+    margin-left: 170px;
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    
+    overflow: hidden;
+    display: flex;
+ 
+}
+pic {
+    float: left;
+    max-width: 120px;
+    margin: 1;
+    padding: 1em;
+}
+form{
+     margin-left: 170px;
+  
+    padding: 1em;
+    overflow: hidden;
+    display: flex;
+
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: -1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #77BFC7;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+          }
+bi{
+    float: right;
+            display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+          
+          }
+
+li a:hover {
+     background-color: #95DDE5;
+        }
+.b{
+        margin: 0;
+  }
+.b:hover{
+        background-color:#DBFFFF;
+    }
+.share{
+        display: flex;
+        float: right;
+        margin-top: -50px;
+        margin-right: 50px;
+
+
+    }
+#social{
+        width: 40px;
+        height: 40px;
+    }
+
+
+    
+
