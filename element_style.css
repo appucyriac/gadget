@@ -17,6 +17,7 @@ h3{
     color: grey;
      font-family:'Muli', sans-serif;;
      font-size: 70%;
+     display: inline-block;
      
      
 }
@@ -57,8 +58,9 @@ body {
 }
 
 header {
+
     padding: 0;
-    margin: 0;
+    margin: -50px;
     color: white;
     background-color: white;
     clear: left;
@@ -118,7 +120,7 @@ form{
     display: flex;
 
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 20px;
     margin: -1px 0;
@@ -126,12 +128,16 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+form input[type="checkbox"] {
+    width:20px;
+}
+
 
 
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 02px;
     overflow: hidden;
     background-color: #77BFC7;
 }
@@ -182,6 +188,9 @@ li a:hover {
         width: 40px;
         height: 40px;
     }
+#sideimage{
+    padding-left: -50px;
+}
 
 
     
