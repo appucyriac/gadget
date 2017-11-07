@@ -107,6 +107,7 @@ form {
     overflow: hidden;
     display: flex;
     margin-top: 140px;
+    margin-right: 400px;
 }
 
 input[type=text], input[type=password] {
