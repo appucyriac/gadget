@@ -58,7 +58,7 @@ body {
 }
 
 header {
-
+    height: 50px;
     padding: 0;
     margin: 0;
     color: white;
@@ -137,7 +137,7 @@ form input[type="checkbox"] {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 02px;
+    padding: 0;
     overflow: hidden;
     background-color: #77BFC7;
 }
