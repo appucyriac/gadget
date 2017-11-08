@@ -12,7 +12,7 @@ function logged(){
    
         }
         else{
-
+            password.setCustomValidity("Password Correct");
             modal.style.display = "block";
             span.onclick = function() {
             modal.style.display = "none";
@@ -23,5 +23,6 @@ function logged(){
               modal.style.display = "none";
   	          }
     }
+   
  }
 }

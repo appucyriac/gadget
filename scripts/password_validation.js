@@ -14,6 +14,7 @@ function validatePassword(){
        confirm_password.setCustomValidity("Please fill in all fields");
   	  } 
   	  else{
+            confirm_password.setCustomValidity("Passwords match");
   	  	    modal.style.display = "block";
             span.onclick = function() {
             modal.style.display = "none";
