@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/element_style.css">
+  <link rel="stylesheet" type="text/css" href="file:///home/appu/Documents/gadget/css/element_style.css"">
   <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/button.css">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
@@ -25,13 +25,13 @@
   <form action="/action_page.php">
    <div class="container">
     <label><b><h3>Email</h3></b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="Email" placeholder="Enter Email" name="email" required>
     <label><b><h3>Password</h3></b></label>
     <input type="password" size="70px"placeholder="Enter Password" name="psw" required> 
      <div class="clearfix">
       <br>
       <a href="file:///home/appu/Documents/GadgetFreak/gadgetfreak_home.html" class="myButton">Cancel</a>
-      <a href="#" class="myButton">Sign in</a>
+      <button type="submit" name="Sign in" class="myButton" id="signin_btn" onclick="validatePassword()">Sign in</button>  
       <h3>Remember me</h3><input type="checkbox" checked="checked">
     </div>
    </div>
