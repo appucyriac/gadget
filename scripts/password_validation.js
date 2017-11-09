@@ -1,6 +1,6 @@
 var password = document.getElementById("password")
 var confirm_password = document.getElementById("confirm_password");
-var email = document.getElementById("email").value;
+var email = document.getElementById("email")
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
@@ -13,7 +13,7 @@ function validatePassword()
   else{ 
     if (reg.test(email) == false) 
             {
-                email.setCustomValidity("Invalid email");
+                alert('Invalid Email Address');
                 return (false);
             }
     else{
