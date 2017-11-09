@@ -13,7 +13,7 @@ function validatePassword()
   else{ 
     if (reg.test(email) == false) 
             {
-                alert('Invalid Email Address');
+                confirm_password.setCustomValidity("Invalid email");
                 return (false);
             }
     else{
