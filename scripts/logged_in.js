@@ -7,7 +7,7 @@ var span = document.getElementsByClassName("close")[0];
 function logged() {
 
     if (password.value == "123" && email.value == "appu@qburst.com") {
-        password.setCustomValidity("Password Correct");
+        password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
             modal.style.display = "none";
@@ -18,6 +18,11 @@ function logged() {
                 modal.style.display = "none";
             }
         }
+        setTimeout(
+            function() {
+                window.location = 'https://appucyriac.github.io/gadget/index.html'
+            }, 2500);
+
 
 
     } else {
