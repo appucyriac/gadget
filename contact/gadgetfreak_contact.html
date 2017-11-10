@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/element_style.css">
-  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/button.css">
+  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/element_style.css">
+  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/button.css">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 	<title>Gadget Freak: Contact Us</title> 
+  <script src="file:///home/appu/Documents/gadget/scripts/contact.js"></script>
  </head>
  <body>
   <header>	    
@@ -14,7 +15,6 @@
 		</h1>
     <ul>
          <li><a class="active" href="https://appucyriac.github.io/gadgetfreak_home.html">Home</a></li>
-         <li><a href="#news">News</a></li>
          <li><a href="#contact">Contact</a></li>
          <li><a href="https://appucyriac.github.io/about/gadgetfreak_about.html">About</a></li>
          <bi><a href="https://appucyriac.github.io/account/gadgetfreak_register.html">Sign Up</a></bi>
@@ -32,7 +32,14 @@
     <input type="text" placeholder="Add Comments" name="psw-repeat" required>   
      <div class="clearfix">
       <br>
-      <a href="file:///home/appu/Documents/GadgetFreak/gadgetfreak_home.html" class="myButton">Contact us</a>
+
+     <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="contact()">Contact Us</button>
+           <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+               <h1>Thanks for registering with us</h1>
+            </div>
+            </div>
      </div>
     </div>
    </form>

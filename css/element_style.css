@@ -42,8 +42,9 @@ h6 {
 
 h7 {
     color: grey;
-    font-size: 100%;
-    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 150%;
+    margin-left: 60px;
 }
 
 body {
@@ -88,6 +89,15 @@ login {
 
 article {
     margin-left: 170px;
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+article_about{
+     margin-left: 60px;
+     margin-top:200px;
+     padding-right: 2px;
     font-family: 'Muli', sans-serif;
     padding: 0;
     overflow: hidden;
@@ -218,4 +228,23 @@ li a:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+#search {
+    float: right;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+    width: 100%;
 }
