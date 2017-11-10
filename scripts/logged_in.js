@@ -18,10 +18,10 @@ function logged() {
                 modal.style.display = "none";
             }
         }
-       // setTimeout(
-        //    function() {
-          //      window.location = 'https://appucyriac.github.io/gadget/index.html'
-          //  }, 2500);
+        setTimeout(
+            function() {
+                window.location = 'https://appucyriac.github.io/gadget/index.html'
+            }, 2500);
 
 
 
