@@ -42,9 +42,32 @@ h6 {
 
 h7 {
     color: grey;
-    font-size: 100%;
-    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 150%;
+    margin-left: 60px;
 }
+
+h8{
+
+    color: grey;
+    font-size: 220%;
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: 100px;
+}
+h9{
+
+    color: grey;
+    font-size: 220%;
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: 70px;
+}
+
 
 body {
     background-color: white;
@@ -88,6 +111,15 @@ login {
 
 article {
     margin-left: 170px;
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+article_about{
+     margin-left: 60px;
+     margin-top:200px;
+     padding-right: 2px;
     font-family: 'Muli', sans-serif;
     padding: 0;
     overflow: hidden;
@@ -187,24 +219,23 @@ li a:hover {
     margin-left: 10px;
 }
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     font-family: 'Amatic SC', cursive;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 36%; 
 }
 .close {
     color: #aaa;
@@ -218,4 +249,23 @@ li a:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+#search {
+    float: right;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+    width: 100%;
 }
