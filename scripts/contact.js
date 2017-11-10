@@ -4,7 +4,7 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
-function contact() {
+function contactus() {
 
 
     password.setCustomValidity("You will be redirected shortly");
