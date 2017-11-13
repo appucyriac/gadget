@@ -15,6 +15,9 @@ $(document).ready(function() {
 
 
 });
+$( "#logout" ).click(function() {
+  alert( "Handler for .click() called." );
+});
 
 
 function logged() {
