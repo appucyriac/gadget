@@ -47,23 +47,27 @@ h7 {
     margin-left: 60px;
 }
 
-h8 {
+h8{
+
     color: grey;
     font-size: 220%;
     text-align: center;
+
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     margin-left: 100px;
 }
+h9{
 
-h9 {
     color: grey;
     font-size: 220%;
     text-align: center;
+
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     margin-left: 70px;
 }
+
 
 body {
     background-color: white;
@@ -94,14 +98,6 @@ footer {
     clear: left;
 }
 
-bi lin {
-    display: none;
-}
-
-bi lout {
-    display: block;
-}
-
 logo {
     overflow: hidden;
     display: block;
@@ -120,11 +116,10 @@ article {
     overflow: hidden;
     display: flex;
 }
-
-article_about {
-    margin-left: 60px;
-    margin-top: 200px;
-    padding-right: 2px;
+article_about{
+     margin-left: 60px;
+     margin-top:200px;
+     padding-right: 2px;
     font-family: 'Muli', sans-serif;
     padding: 0;
     overflow: hidden;
@@ -147,7 +142,7 @@ form {
     margin-right: 400px;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password],input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: -1px 0;
@@ -223,28 +218,25 @@ li a:hover {
     padding-left: -50px;
     margin-left: 10px;
 }
-
 .modal {
-    display: none;
-    position: fixed;
+    display: none; 
+    position: fixed; 
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
-
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 15% auto; 
     padding: 20px;
     font-family: 'Amatic SC', cursive;
     border: 1px solid #888;
-    width: 36%;
+    width: 36%; 
 }
-
 .close {
     color: #aaa;
     float: right;
@@ -252,12 +244,12 @@ li a:hover {
     font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
 #search {
     float: right;
     width: 130px;
@@ -267,7 +259,7 @@ li a:hover {
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
-    background-position: 10px 10px;
+    background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;

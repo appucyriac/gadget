@@ -8,24 +8,24 @@ var usr = localStorage.getItem("logged");
 $(document).ready(function() {
 
     if (usr == "true") {
-        lin.style.display = "block";
-        lout.style.display = "none";
+        document.getElementById("user").innerHTML = "Welcome, Appu";
+        user.href = "#"
+        document.getElementById("register").innerHTML = "";
     }
 
 
 });
-$("#myHref").on('click', function() {
-    localStorage.setItem("logged", "false");
-    alert("You are now logged out");
-    bi.lin.style.display = "none";
-    bi.lout.style.display = "block";
-    // window.location = "https://appucyriac.github.io/gadget/index.html";
-});
 
 
 function logged() {
+    if (usr == "true") {
 
-    if (password.value == "123" && email.value == "appu@qburst.com") {
+        password.setCustomValidity("You are already logged in. Redirecting to home page..");
+        setTimeout(
+            function() {
+                window.location = 'file:///home/appu/Documents/gadget/index.html';
+            }, 2500);
+    } else if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
@@ -47,11 +47,4 @@ function logged() {
 
         password.setCustomValidity("Invalid User ID/Password");
     }
-}
-function logout()
-{
-     localStorage.setItem("logged", "false");
-    alert("You are now logged out");
-    bi.lin.style.display = "none";
-    bi.lout.style.display = "block";   
 }
