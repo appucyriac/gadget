@@ -94,11 +94,11 @@ footer {
     clear: left;
 }
 
-.lin {
+#lin {
     display: none;
 }
 
-.lout {
+#lout {
     display: block;
 }
 

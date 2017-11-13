@@ -48,3 +48,10 @@ function logged() {
         password.setCustomValidity("Invalid User ID/Password");
     }
 }
+function logout()
+{
+     localStorage.setItem("logged", "false");
+    alert("You are now logged out");
+    lin.style.display = "none";
+    lout.style.display = "block";   
+}
