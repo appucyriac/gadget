@@ -17,7 +17,6 @@ $(document).ready(function() {
 $("#myHref").on('click', function() {
     localStorage.setItem("logged", "false");
     alert("You are now logged out");
-    localStorage.setItem("logged", "false");
     lin.style.display = "none";
     lout.style.display = "block";
     // window.location = "https://appucyriac.github.io/gadget/index.html";
