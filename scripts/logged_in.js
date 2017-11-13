@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
 });
-$(document).on('click','#myHref',function(){
+$("#myHref").on('click', function() {
     localStorage.setItem("logged", "false");
     alert("You are now logged out");
     lin.style.display = "none";
