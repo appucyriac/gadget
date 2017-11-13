@@ -8,7 +8,9 @@ var usr = localStorage.getItem("logged");
 $(document).ready(function() {
 
     if (usr == "true") {
-        document.getElementById("user").innerHTML = "Logged in";
+        document.getElementById("user").innerHTML = "Welcome, Appu";
+        user.href = "#"
+        document.getElementById("register").innerHTML = "";
     }
 
 
@@ -16,8 +18,14 @@ $(document).ready(function() {
 
 
 function logged() {
+    if (usr == "true") {
 
-    if (password.value == "123" && email.value == "appu@qburst.com") {
+        password.setCustomValidity("You are already logged in. Redirecting to home page..");
+        setTimeout(
+            function() {
+                window.location = 'file:///home/appu/Documents/gadget/index.html';
+            }, 2500);
+    } else if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
