@@ -43,6 +43,10 @@ function logged() {
 }
 
 function logout() {
+
+    localStorage.setItem("logged", "false");
+    lin.style.display = "none";
+    lout.style.display = "block";
     modal.style.display = "block";
     span.onclick = function() {
         modal.style.display = "none";
