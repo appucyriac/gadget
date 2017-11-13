@@ -3,6 +3,17 @@ var email = document.getElementById("email")
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
+var usr = localStorage.getItem("logged");
+
+$(document).ready(function() {
+
+    if (usr == "true") {
+        document.getElementById("user").innerHTML = "Logged in";
+    }
+
+
+});
+
 
 function logged() {
 
@@ -22,8 +33,7 @@ function logged() {
             function() {
                 window.location = 'https://appucyriac.github.io/gadget/index.html'
             }, 2500);
-
-
+        localStorage.setItem("logged", "true");
 
     } else {
 
