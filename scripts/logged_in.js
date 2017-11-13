@@ -15,8 +15,11 @@ $(document).ready(function() {
 
 });
 $("#myHref").on('click', function() {
-  alert("inside onclick");
-  window.location = "http://www.google.com";
+    alert("You are now logged out");
+    localStorage.setItem("logged", "false");
+    lin.style.display = "none";
+    lout.style.display = "block";
+    window.location = "https://appucyriac.github.io/gadget/index.html";
 });
 
 
