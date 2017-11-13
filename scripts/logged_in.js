@@ -8,9 +8,9 @@ var usr = localStorage.getItem("logged");
 $(document).ready(function() {
 
     if (usr == "true") {
-        document.getElementById("user").innerHTML = "Welcome, Appu";
-        user.href = "#"
-        document.getElementById("register").innerHTML = "";
+     
+     lin.style.display="none";
+     lout.style.display="block";
     }
 
 
