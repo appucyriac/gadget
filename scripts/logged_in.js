@@ -17,9 +17,9 @@ $(document).ready(function() {
 $("#myHref").on('click', function() {
     alert("You are now logged out");
     localStorage.setItem("logged", "false");
-    lin.style.display = "none";
-    lout.style.display = "block";
-   // window.location = "https://appucyriac.github.io/gadget/index.html";
+    lin.style.display = "block";
+    lout.style.display = "none";
+    // window.location = "https://appucyriac.github.io/gadget/index.html";
 });
 
 
