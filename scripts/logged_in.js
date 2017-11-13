@@ -10,7 +10,7 @@ $(document).ready(function() {
     if (usr == "true") {
         document.getElementById("user").innerHTML = "Welcome, Appu";
         user.href = "#"
-        document.getElementById("register").innerHTML = "";
+        document.getElementById("register").innerHTML = "Logout";
     }
 
 
