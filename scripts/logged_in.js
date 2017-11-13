@@ -19,8 +19,8 @@ $(document).ready(function() {
 
 
 });
-$( "#logout" ).click(function() {
-  alert( "Handler for .click() called." );
+$("#logout").click(function() {
+  alert( "You are now logged out" );
   localStorage.setItem("logged", "false");
 });
 
