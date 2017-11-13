@@ -8,8 +8,8 @@ var usr = localStorage.getItem("logged");
 $(document).ready(function() {
 
     if (usr == "true") {
-       lin.style.display="block";
-       lout.style.display="none";
+        lin.style.display = "block";
+        lout.style.display = "none";
     }
 
 
@@ -17,14 +17,8 @@ $(document).ready(function() {
 
 
 function logged() {
-    if (usr == "true") {
 
-        password.setCustomValidity("You are already logged in. Redirecting to home page..");
-        setTimeout(
-            function() {
-                window.location = 'file:///home/appu/Documents/gadget/index.html';
-            }, 2500);
-    } else if (password.value == "123" && email.value == "appu@qburst.com") {
+    if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
@@ -48,16 +42,15 @@ function logged() {
     }
 }
 
-function logout()
-{
-            modal.style.display = "block";
-        span.onclick = function() {
+function logout() {
+    modal.style.display = "block";
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    }
 }
