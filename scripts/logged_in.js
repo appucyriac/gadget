@@ -17,7 +17,7 @@ $(document).ready(function() {
 $("#myHref").on('click', function() {
     alert("You are now logged out");
     localStorage.setItem("logged", "false");
-    //lin.style.display = "none";
+    lin.style.display = "none";
     lout.style.display = "block";
     // window.location = "https://appucyriac.github.io/gadget/index.html";
 });
@@ -46,22 +46,5 @@ function logged() {
     } else {
 
         password.setCustomValidity("Invalid User ID/Password");
-    }
-}
-
-function logout() {
-
-    localStorage.setItem("logged", "false");
-    lin.style.display = "none";
-    lout.style.display = "block";
-    modal.style.display = "block";
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
     }
 }
