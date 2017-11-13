@@ -3,10 +3,29 @@ var email = document.getElementById("email")
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
+var usr = localStorage.getItem("logged");
+
+$(document).ready(function() {
+
+    if (usr == "true") {
+        document.getElementById("user").innerHTML = "Welcome, Appu";
+        user.href = "#"
+        document.getElementById("register").innerHTML = "";
+    }
+
+
+});
+
 
 function logged() {
+    if (usr == "true") {
 
-    if (password.value == "123" && email.value == "appu@qburst.com") {
+        password.setCustomValidity("You are already logged in. Redirecting to home page..");
+        setTimeout(
+            function() {
+                window.location = 'file:///home/appu/Documents/gadget/index.html';
+            }, 2500);
+    } else if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
@@ -22,8 +41,7 @@ function logged() {
             function() {
                 window.location = 'https://appucyriac.github.io/gadget/index.html'
             }, 2500);
-
-
+        localStorage.setItem("logged", "true");
 
     } else {
 
