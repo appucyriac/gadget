@@ -17,6 +17,8 @@ $(document).ready(function() {
 });
 $( "#logout" ).click(function() {
   alert( "Handler for .click() called." );
+       lin.style.display="block";
+     lout.style.display="none";
 });
 
 
