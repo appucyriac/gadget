@@ -97,6 +97,13 @@ footer {
     background-color: #77BFC7;
     clear: left;
 }
+loggedin{
+       display: none; 
+}
+loggedout{
+       display: block; 
+}
+
 
 logo {
     overflow: hidden;
