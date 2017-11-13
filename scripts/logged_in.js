@@ -12,11 +12,6 @@ $(document).ready(function() {
      lin.style.display="none";
      lout.style.display="block";
     }
-    else{
-    lin.style.display="block";
-     lout.style.display="none";   
-    }
-
 
 });
 $("#logout").click(function() {
