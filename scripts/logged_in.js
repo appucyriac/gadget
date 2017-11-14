@@ -5,8 +5,6 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 $(document).ready(function() {
-    localStorage.setItem("signed", "true");
-
     var usr = localStorage.getItem("signed");
     if (usr == "true") {
 
