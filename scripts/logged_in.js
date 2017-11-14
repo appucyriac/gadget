@@ -11,6 +11,10 @@ $(document).ready(function() {
         $(".lin").hide();
         $(".lout").show();
     }
+
+
+
+});
     $("#logout").click(function(event) {
             event.preventDefault();
             alert("You are now logged out");
@@ -18,9 +22,6 @@ $(document).ready(function() {
             $(".lin").show();
             $(".lout").hide();
         });
-
-
-});
 
 
 
