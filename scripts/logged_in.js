@@ -3,30 +3,28 @@ var email = document.getElementById("email")
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
-var usr = localStorage.getItem("signed");
 
 $(document).ready(function() {
-
+    var usr = localStorage.getItem("signed");
     if (usr == "true") {
-     
-     $(".lin").hide();
-     $(".lout").show();
-    }
-    else{
-     $(".lin").show();
-     $(".lout").hide();
+
+        $(".lin").hide();
+        $(".lout").show();
+    } else {
+        $(".lin").show();
+        $(".lout").hide();
     }
 
 });
 $("#logout").click(function() {
-  alert( "You are now logged out" );
-  localStorage.setItem("signed", "false");
+    alert("You are now logged out");
+    localStorage.setItem("signed", "false");
 });
 
 
 function logged() {
-    
- if (password.value == "123" && email.value == "appu@qburst.com") {
+
+    if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
