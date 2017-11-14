@@ -7,7 +7,7 @@ var span = document.getElementsByClassName("close")[0];
 function contactus() {
 
 
-    password.setCustomValidity("You will be redirected shortly");
+    email.setCustomValidity("You will be redirected shortly");
     modal.style.display = "block";
     span.onclick = function() {
         modal.style.display = "none";
