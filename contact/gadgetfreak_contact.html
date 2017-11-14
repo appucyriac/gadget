@@ -6,9 +6,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://appucyriac.github.io/gadget/scripts/password_validation.js"></script>
-  <script src="https://appucyriac.github.io/gadget/scripts/logged_in.js"></script>
-  <script src="https://appucyriac.github.io/gadget/scripts/contact.js"></script>
 	<title>Gadget Freak: Contact Us</title>   
  </head>
  <body>
@@ -34,12 +31,12 @@
     <label><b><h3>Email</h3></b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off">
     <label><b><h3>Company Name</h3></b></label>
-    <input type="text" size="70px"placeholder="Enter Company Name" name="psw" required autocomplete="off">
+    <input type="text" placeholder="Enter Company Name" name="psw" required autocomplete="off">
     <label><b><h3>Comments</h3></b></label>
     <input type="text" placeholder="Add Comments" name="psw-repeat" required autocomplete="off">   
      <div class="clearfix">
       <br>
-     <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="contactus()">Contact Us</button>
+     <button type="submit" name="contact" class="myButton" id="contact" onclick="successPopup()">Contact Us</button>
            <div id="myModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
@@ -62,6 +59,7 @@
          <img id="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
        </a>
 	   </div>
-  </footer>	
+  </footer>
+  <script src="https://appucyriac.github.io/gadget/scripts/user_functions.js"></script>	
  </body>
 </html>

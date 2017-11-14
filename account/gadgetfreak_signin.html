@@ -33,19 +33,19 @@
   </header>	    
 	
 		
-  <form action="/action_page.php" onsubmit="event.preventDefault()">
+  <form action="/action_page.php">
    <div class="container">
     <label><b><h3>Email</h3></b></label>
     <input type="email" placeholder="Enter Email" name="email" required id="email" autocomplete="off">
 
 
     <label><b><h3>Password</h3></b></label>
-    <input type="password" size="70px" placeholder="Enter Password" name="psw" required id="password"> 
+    <input type="password" placeholder="Enter Password" name="psw" required id="password"> 
      <div class="clearfix">
       <br>
       <a href="https://appucyriac.github.io/gadget/index.html" class="myButton">Cancel</a>
       <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="logged()">Sign in</button>
-      <h3>Remember me</h3><input type="checkbox" checked="checked">
+      <h3>Remember me</h3><input type="checkbox" checked="checked" id="Stay_signed_in">
       <div id="myModal" class="modal">
        <div class="modal-content">
         <span class="close">&times;</span>
@@ -70,6 +70,6 @@
        </a>
 	   </div>
   </footer>
-  <script src="https://appucyriac.github.io/gadget/scripts/logged_in.js"></script>
+  <script src="https://appucyriac.github.io/gadget/scripts/user_functions.js"></script>
  </body>
 </html>
