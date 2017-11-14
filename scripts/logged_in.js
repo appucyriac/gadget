@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 function logged() {
 
-    if (password== "123" && email.value == "appu@qburst.com") {
+    if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
         span.onclick = function() {
