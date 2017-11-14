@@ -16,7 +16,8 @@ $(document).ready(function() {
     }
 
 });
-$("#logout").click(function() {
+$("#logout").click(function(event) {
+    event.preventDefault();
     alert("You are now logged out");
     localStorage.setItem("signed", "false");
 });
