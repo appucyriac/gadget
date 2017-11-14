@@ -1,5 +1,5 @@
-var password = document.getElementById("password")
-var email = document.getElementById("email")
+var password = document.getElementById("password");
+var email = document.getElementById("email");
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
