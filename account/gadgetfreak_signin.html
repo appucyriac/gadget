@@ -33,7 +33,7 @@
   </header>	    
 	
 		
-  <form action="/action_page.php" onsubmit="event.preventDefault()">
+  <form action="/action_page.php">
    <div class="container">
     <label><b><h3>Email</h3></b></label>
     <input type="email" placeholder="Enter Email" name="email" required id="email" autocomplete="off">
@@ -45,7 +45,7 @@
       <br>
       <a href="https://appucyriac.github.io/gadget/index.html" class="myButton">Cancel</a>
       <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="logged()">Sign in</button>
-      <h3>Remember me</h3><input type="checkbox" checked="checked">
+      <h3>Remember me</h3><input type="checkbox" checked="checked" id="Stay_signed_in">
       <div id="myModal" class="modal">
        <div class="modal-content">
         <span class="close">&times;</span>

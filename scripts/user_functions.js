@@ -25,6 +25,7 @@ $(document).ready(function() {
     $(".lin").show();
     $(".lout").hide();
   });
+
 });
 
 
@@ -33,8 +34,13 @@ function logged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
-    localStorage.setItem("signed", "true");
+        $("#Public_Web").click(function() {
+        if (this.checked) {
+            localStorage.setItem("signed", "true");
 
+        }
+    });
+    
   } else {
 
     password.setCustomValidity("Invalid User ID/Password");
