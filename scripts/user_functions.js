@@ -37,6 +37,10 @@ function logged() {
     if(Stay_signed_in.checked){
       localStorage.setItem("signed", "true");
     }
+    else{
+          $(".lin").hide();
+          $(".lout").show();
+    }
 
   } else {
 
