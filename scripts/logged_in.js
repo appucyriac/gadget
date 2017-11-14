@@ -25,7 +25,7 @@ $("#logout").click(function() {
 
 
 function logged() {
-    localStorage.clear();
+    
  if (password.value == "123" && email.value == "appu@qburst.com") {
         password.setCustomValidity("You will be redirected shortly");
         modal.style.display = "block";
