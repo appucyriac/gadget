@@ -1,5 +1,4 @@
-var password = document.getElementById("password")
-var email = document.getElementById("email")
+var email = document.getElementById("email");
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
@@ -7,7 +6,7 @@ var span = document.getElementsByClassName("close")[0];
 function contactus() {
 
 
-    password.setCustomValidity("You will be redirected shortly");
+    email.setCustomValidity("You will be redirected shortly");
     modal.style.display = "block";
     span.onclick = function() {
         modal.style.display = "none";

@@ -269,3 +269,9 @@ li a:hover {
 #search:focus {
     width: 100%;
 }
+.lin{
+    display:none;
+}
+.lout{
+    display: block;
+}
