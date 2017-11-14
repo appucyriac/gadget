@@ -3,7 +3,7 @@ var email = document.getElementById("email")
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
-var usr = localStorage.getItem("logged");
+var usr = localStorage.getItem("signed");
 
 $(document).ready(function() {
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
 });
 $("#logout").click(function() {
   alert( "You are now logged out" );
-  localStorage.setItem("logged", "false");
+  localStorage.setItem("signed", "false");
 });
 
 
@@ -42,7 +42,7 @@ function logged() {
             function() {
                 window.location = 'https://appucyriac.github.io/gadget/index.html'
             }, 2500);
-        localStorage.setItem("logged", "true");
+        localStorage.setItem("signed", "true");
 
     } else {
 
