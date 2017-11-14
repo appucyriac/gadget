@@ -32,7 +32,7 @@ $(document).ready(function() {
 function logged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
-    sucessPopup();
+    successPopup();
     localStorage.setItem("signed", "true");
 
   } else {
@@ -57,7 +57,7 @@ function validatePassword() {
       if (password.value == "" || confirm_password.value == "" || email.value == "") {
         confirm_password.setCustomValidity("Please fill in all fields");
       } else {
-        sucessPopup();
+        successPopup();
 
       }
     }
