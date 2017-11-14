@@ -17,8 +17,7 @@ $(document).ready(function() {
             localStorage.setItem("signed", "false");
             $(".lin").show();
             $(".lout").hide();
-        }
-    });
+        });
 
 
 });
