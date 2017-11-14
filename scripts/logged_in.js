@@ -9,8 +9,12 @@ $(document).ready(function() {
 
     if (usr == "true") {
      
-     lin.style.display="none";
-     lout.style.display="block";
+     $(".lin").hide();
+     $(".lout").show();
+    }
+    else{
+     $(".lin").show();
+     $(".lout").hide();
     }
 
 });
