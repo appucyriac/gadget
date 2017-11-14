@@ -34,7 +34,7 @@ function logged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
-    if(document.getElementById("Stay_signed_in").checked == true){
+    if(Stay_signed_in.checked){
       localStorage.setItem("signed", "true");
     }
 
