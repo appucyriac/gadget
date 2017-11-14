@@ -10,14 +10,17 @@ $(document).ready(function() {
 
         $(".lin").hide();
         $(".lout").show();
+    } else {
+        $(".lin").show();
+        $(".lout").hide();
     }
     $("#logout").click(function(event) {
-            event.preventDefault();
-            alert("You are now logged out");
-            localStorage.setItem("signed", "false");
-            $(".lin").show();
-            $(".lout").hide();
-        });
+        event.preventDefault();
+        alert("You are now logged out");
+        localStorage.setItem("signed", "false");
+        $(".lin").show();
+        $(".lout").hide();
+    });
 
 
 });
