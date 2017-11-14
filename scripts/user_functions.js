@@ -34,13 +34,13 @@ function logged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
-        $("#Public_Web").click(function() {
-        if (this.checked) {
-            localStorage.setItem("signed", "true");
+    $("#Stay_signed_in").click(function() {
+      if (this.checked) {
+        localStorage.setItem("signed", "true");
 
-        }
+      }
     });
-    
+
   } else {
 
     password.setCustomValidity("Invalid User ID/Password");
