@@ -90,23 +90,4 @@ function successPopup() {
     }, 2500);
 }
 
-function checkLoginStatus()
-{
-  var usr = localStorage.getItem("signed");
-  if (usr == "true") {
-
-    $(".login-buttons").hide();
-    $(".logged-buttons").show();
-  } else {
-    $(".login-buttons").show();
-    $(".logged-buttons").hide();
-  }
-  $("#logout").click(function(event) {
-    event.preventDefault();
-    alert("You are now logged out");
-    localStorage.setItem("signed", "false");
-    $(".login-buttons").show();
-    $(".logged-buttons").hide();
-  });
-}
 
