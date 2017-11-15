@@ -89,3 +89,5 @@ function successPopup() {
       window.location = 'https://appucyriac.github.io/gadget/index.html'
     }, 2500);
 }
+
+
