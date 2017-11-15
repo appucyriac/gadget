@@ -41,6 +41,14 @@ h5{
     margin-left: 160px;
     padding-bottom: -10px;
 }
+.about-header{
+        color: grey;
+    font-family: 'Amatic SC', cursive;
+    font-size: 145%;
+    margin-left: 55px;
+    padding-bottom: -10px;
+}
+
 
 
 h7 {
@@ -116,22 +124,14 @@ login {
     display: flex;
 }
 .about-content{
-    margin-left: 175px;
+    margin-left: 72px;
     margin-top:190px;
+    padding-right: 15px;
     font-family: 'Muli', sans-serif;
-    padding: 0;
     overflow: hidden;
     display: flex;
 }
-article_about{
-     margin-left: 60px;
-     margin-top:200px;
-     padding-right: 2px;
-    font-family: 'Muli', sans-serif;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-}
+
 
 pic {
     float: left;
