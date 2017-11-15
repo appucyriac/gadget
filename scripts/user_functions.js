@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 
 
-function logged() {
+function userLogged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
