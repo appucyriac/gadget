@@ -117,6 +117,14 @@ login {
     overflow: hidden;
     display: flex;
 }
+.about-content{
+    margin-left: 175px;
+    margin-top:190px;
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
 article_about{
      margin-left: 60px;
      margin-top:200px;
