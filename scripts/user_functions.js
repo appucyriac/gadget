@@ -12,18 +12,18 @@ $(document).ready(function() {
   var usr = localStorage.getItem("signed");
   if (usr == "true") {
 
-    $(".lin").hide();
-    $(".lout").show();
+    $(".login-buttons").hide();
+    $(".logged-buttons").show();
   } else {
-    $(".lin").show();
-    $(".lout").hide();
+    $(".login-buttons").show();
+    $(".logged-buttons").hide();
   }
   $("#logout").click(function(event) {
     event.preventDefault();
     alert("You are now logged out");
     localStorage.setItem("signed", "false");
-    $(".lin").show();
-    $(".lout").hide();
+    $(".login-buttons").show();
+    $(".logged-buttons").hide();
   });
 
 });
@@ -38,8 +38,8 @@ function logged() {
       localStorage.setItem("signed", "true");
     }
     else{
-          $(".lin").hide();
-          $(".lout").show();
+          $(".login-buttons").hide();
+          $(".logged-buttons").show();
     }
 
   } else {
