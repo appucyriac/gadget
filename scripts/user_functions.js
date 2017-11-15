@@ -73,7 +73,7 @@ function validatePassword() {
 
 function successPopup() {
 
-  //password.setCustomValidity("You will be redirected shortly");
+  password.setCustomValidity("You will be redirected shortly");
   modal.style.display = "block";
   span.onclick = function() {
     modal.style.display = "none";
