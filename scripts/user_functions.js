@@ -34,6 +34,7 @@ function logged() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
+    password.setCustomValidity("You will be redirected shortly");
     if(Stay_signed_in.checked){
       localStorage.setItem("signed", "true");
     }
@@ -65,7 +66,7 @@ function validatePassword() {
         confirm_password.setCustomValidity("Please fill in all fields");
       } else {
         successPopup();
-
+        password.setCustomValidity("You will be redirected shortly");
       }
     }
   }
@@ -73,7 +74,7 @@ function validatePassword() {
 
 function successPopup() {
 
-  password.setCustomValidity("You will be redirected shortly");
+  
   modal.style.display = "block";
   span.onclick = function() {
     modal.style.display = "none";
