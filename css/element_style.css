@@ -84,6 +84,7 @@ input[type=text], input[type=password], input[type=email] {
 
 form input[type="checkbox"] {
     width: 20px;
+    top: 15px;
 }
 
 ul {
@@ -224,4 +225,6 @@ ul {
 article:hover{
     background-color: #CDFDF6;
 }
-
+.myButton{
+    top: 15px;
+}
