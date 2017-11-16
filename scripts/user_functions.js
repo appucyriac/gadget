@@ -1,10 +1,10 @@
-var password = document.getElementById("password")
-var confirm_password = document.getElementById("confirm_password");
-var email = document.getElementById("email");
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-var check = /(.+)@(.+){2,}\.(.+){2,}/;
+var password = document.getElementById("password"),
+ confirm_password = document.getElementById("confirm_password"),
+ email = document.getElementById("email"),
+ modal = document.getElementById('myModal'),
+ btn = document.getElementById("myBtn"),
+ span = document.getElementsByClassName("close")[0],
+ check = /(.+)@(.+){2,}\.(.+){2,}/;
 
 
 
@@ -30,12 +30,12 @@ $(document).ready(function() {
 
 
 
-function logged() {
+function logIn() {
 
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
     password.setCustomValidity("You will be redirected shortly");
-    if(Stay_signed_in.checked){
+    if(stay_signed_in.checked){
       localStorage.setItem("signed", "true");
     }
     else{
