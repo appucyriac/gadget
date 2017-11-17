@@ -2,7 +2,6 @@ var password = document.getElementById("password"),
  confirm_password = document.getElementById("confirm_password"),
  email = document.getElementById("email"),
  modal = document.getElementById('myModal'),
- btn = document.getElementById("myBtn"),
  span = document.getElementsByClassName("close")[0],
  check = /(.+)@(.+){2,}\.(.+){2,}/;
 
