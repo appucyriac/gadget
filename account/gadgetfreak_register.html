@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/element_style.css">
-  <link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/button.css">
+   <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../css/element_style.css">
+  <link rel="stylesheet" type="text/css" href="../css/button.css">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>Gadget Freak: Signup</title> 
  </head>
  <body>
-  <header>	    
-		<h1 id="main-title" style="font-family:'Amatic SC', cursive, cursive">
-			G a d g e t  F r e a k
-		</h1>
-    <ul>
-         <li><a class="active" href="https://appucyriac.github.io/gadget/index.html">Home</a></li>
-         <li><a href="https://appucyriac.github.io/gadget/contact/gadgetfreak_contact.html">Contact</a></li>
-         <li><a href="https://appucyriac.github.io/gadget/about/gadgetfreak_about.html">About</a></li>
-         <bi><a href="https://appucyriac.github.io/gadget/account/gadgetfreak_register.html">Sign Up</a></bi>
-         <bi><a href="https://appucyriac.github.io/gadget/account/gadgetfreak_signin.html">Sign In</a></bi>
-        </ul>
-		<h5>Sign Up</h5>	
-  </header>
+ <div class="main">
+   <header class="global-header">
+      
+    <h1 id="main_title" style="font-family: 'Amatic SC', cursive">
+      G a d g e t   F r e a k
+    </h1>
+
+  <div class="sub-header" >
+     <nav>
+       <ul>
+         <li><a class="menu" href="../index.html">Home</a></li>
+         <li><a class="menu" href="../contact/gadgetfreak_contact.html">Contact</a></li>
+         <li><a class="menu" href="../about/gadgetfreak_about.html">About</a></li>
+         <li><a class="login-buttons" href="gadgetfreak_register.html" id="register">Sign Up</a></li>
+         <li><a class="login-buttons" href="gadgetfreak_signin.html" id="sigin">Sign In</a></li>
+         <li><a href="#" class ="logged-buttons" id="logout">Logout</a></li>
+         <li><a href="#" class ="logged-buttons" id="user">Welcome, Appu</a></li>
+       </ul> 
+     </nav>      
+  </div> 
+  <h2 class="form-header">Sign Up</h2>                                       
+  </header> 
   <form action="/action_page.php">
    <div class="container">
-    <label><b><h3>Email</h3></b></label>
-    <input type="email" placeholder="Enter Email" name="email" required id="email">
-    <label><b><h3>Password</h3></b></label>
-    <input type="password" size="70px"placeholder="Enter Password" name="psw" required id="password">
-    <label><b><h3>Confirm Password</h3></b></label>
+    <h3><label>Email</label></h3>
+    <input type="email" placeholder="Enter Email" name="email" required id="email" autocomplete="off">
+    <h3><label>Password</label></h3>
+    <input type="password" placeholder="Enter Password" name="psw" required id="password">
+    <h3><label>Confirm Password</label></h3>
     <input type="password" placeholder="Confirm Password" name="psw-repeat" required id="confirm_password">   
      <div class="clearfix">
-      <br>
-      <a href="https://appucyriac.github.io/gadget/index.html" class="myButton">Cancel</a>
-      <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="validatePassword()">Sign up</button>  
+      <a href="../index.html" class="myButton">Cancel</a>
+      <button type="submit" name="sign up" class="myButton" id="signUpButton" onclick="validatePassword()">Sign up</button>  
       <div id="myModal" class="modal">
        <div class="modal-content">
         <span class="close">&times;</span>
-        <h9>Thank you for registering with us.</h9>
+        <h4>Thank you for registering with us.</h4>
        </div>
       </div>  
-      <script src="https://appucyriac.github.io/gadget/scripts/password_validation.js"></script>
      </div>
     </div>
    </form>
-  <footer>
-	   <h4>Copyright  © 2017 Gadget Freak Tech. All rights reserved.</h4>
-	   <div class="share">
-	   	<a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+  <footer class="global-footer">
+     <h5>Copyright  © 2017 Gadget Freak Tech. All rights reserved.</h5>
+     <div class="share">
+      <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
         </a>
         <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
         </a>
         <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-       </a>
-	   </div>
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+        </a>
+     </div>
   </footer>	
+   <script src="../scripts/user_functions.js"></script>
+  </div>
  </body>
 </html>
