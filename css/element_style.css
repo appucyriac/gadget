@@ -22,52 +22,18 @@ h3 {
 }
 
 h4 {
-    color: white;
-    font-size: 80%;
+    color: grey;
+    font-size: 180%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
 }
 
 h5 {
-    color: grey;
-    font-family: 'Amatic SC', cursive;
-    font-size: 145%;
-    margin-left: 182px;
-    padding-bottom: -10px;
-}
-
-h6 {
     color: white;
-    font-family: 'Amatic SC', cursive;
-    text-align: right;
+    font-size: 80%;
 }
-
-h7 {
-    color: grey;
-    font-family: 'Amatic SC', cursive;
-    font-size: 150%;
-    margin-left: 60px;
-}
-
-h8{
-
-    color: grey;
-    font-size: 220%;
-    text-align: center;
-
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    margin-left: 100px;
-}
-h9{
-
-    color: grey;
-    font-size: 220%;
-    text-align: center;
-
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    margin-left: 70px;
-}
-
 
 body {
     background-color: white;
@@ -98,41 +64,6 @@ footer {
     clear: left;
 }
 
-logo {
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-login {
-    align-content: center;
-}
-
-article {
-    margin-left: 170px;
-    font-family: 'Muli', sans-serif;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-}
-article_about{
-     margin-left: 60px;
-     margin-top:200px;
-     padding-right: 2px;
-    font-family: 'Muli', sans-serif;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-}
-
-pic {
-    float: left;
-    max-width: 120px;
-    margin: 1;
-    padding: 1em;
-}
-
 form {
     margin-left: 170px;
     padding: 1em;
@@ -142,7 +73,7 @@ form {
     margin-right: 400px;
 }
 
-input[type=text], input[type=password],input[type=email] {
+input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: -1px 0;
@@ -153,6 +84,7 @@ input[type=text], input[type=password],input[type=email] {
 
 form input[type="checkbox"] {
     width: 20px;
+    top: 15px;
 }
 
 ul {
@@ -163,21 +95,98 @@ ul {
     background-color: #77BFC7;
 }
 
-li {
+.article-content {
+    margin-left: 170px;
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.about-content {
+    margin-left: 72px;
+    margin-top: 190px;
+    padding-right: 15px;
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    display: flex;
+}
+
+.form-header {
+    color: grey;
+    font-family: 'Amatic SC', cursive;
+    font-size: 145%;
+    margin-left: 160px;
+    padding-bottom: -10px;
+}
+
+.about-header {
+    color: grey;
+    font-family: 'Amatic SC', cursive;
+    font-size: 145%;
+    margin-left: 55px;
+    padding-bottom: -10px;
+}
+
+.content {
+    margin: 0;
+    margin-top: 90px;
+    margin-bottom: -50px;
+}
+
+.share {
+    display: flex;
+    float: right;
+    margin-top: -50px;
+    margin-right: 50px;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+}
+
+.side-image {
+    padding-left: -50px;
+    margin-left: 10px;
     float: left;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-bi {
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    font-family: 'Amatic SC', cursive;
+    border: 1px solid #888;
+    width: 36%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-buttons {
     float: right;
     display: block;
     color: white;
@@ -188,90 +197,31 @@ bi {
     font-size: 20px;
 }
 
-li a:hover {
+.logged-buttons {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+.menu {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+
+.menu:hover {
     background-color: #95DDE5;
 }
-
-.b {
-    margin: 0;
-    margin-top: 90px;
-    margin-bottom: -50px;
-}
-
-.b:hover {
-    background-color: #DBFFFF;
-}
-
-.share {
-    display: flex;
-    float: right;
-    margin-top: -50px;
-    margin-right: 50px;
-}
-
-#social {
-    width: 40px;
-    height: 40px;
-}
-
-#sideimage {
-    padding-left: -50px;
-    margin-left: 10px;
-}
-.modal {
-    display: none; 
-    position: fixed; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    font-family: 'Amatic SC', cursive;
-    border: 1px solid #888;
-    width: 36%; 
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-#search {
-    float: right;
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-#search:focus {
-    width: 100%;
-}
-.lin{
-    display:none;
-}
-.lout{
-    display: block;
+article:hover{
+    background-color: #CDFDF6;
 }
