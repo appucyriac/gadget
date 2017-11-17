@@ -5,8 +5,7 @@ var password = document.getElementById("password"),
  btn = document.getElementById("myBtn"),
  span = document.getElementsByClassName("close")[0],
  check = /(.+)@(.+){2,}\.(.+){2,}/;
-
-
+var json = $.getJSON({'url': "file:///home/appu/Documents/gadget/json/test.json", 'async': false});
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
@@ -25,7 +24,8 @@ $(document).ready(function() {
     $(".login-buttons").show();
     $(".logged-buttons").hide();
   });
-
+ // json = JSON.parse(json.responseText); 
+  document.getElementsByClassName("article-content")[0].innerHTML=json.text;
 });
 
 
