@@ -24,7 +24,7 @@ $(document).ready(function() {
     $(".login-buttons").show();
     $(".logged-buttons").hide();
   });
-  json = JSON.parse(json.responseText); 
+  //json = JSON.parse(json.responseText); 
   document.getElementsByClassName("article-content")[0].innerHTML=json.text;
 });
 
