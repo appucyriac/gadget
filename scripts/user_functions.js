@@ -25,8 +25,15 @@ $(document).ready(function() {
     $(".login-buttons").show();
     $(".logged-buttons").hide();
   });
-  document.getElementsByClassName("first-article")[0].innerHTML=article_json.article_one;
-  document.getElementsByClassName("second-article")[0].innerHTML=article_json.article_two;
+   $.getJSON('https://appucyriac.github.io/gadget/json/content.json', function (data) {
+      console.log(data);
+
+        document.getElementsByClassName("first-article")[0].innerHTML=data.article_one;
+        document.getElementsByClassName("second-article")[0].innerHTML=data.article_two;
+    });
+      
+  //document.getElementsByClassName("first-article")[0].innerHTML=article_json.article_one;
+  //document.getElementsByClassName("second-article")[0].innerHTML=article_json.article_two;
 });
 
 
