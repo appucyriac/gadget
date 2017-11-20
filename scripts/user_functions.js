@@ -28,6 +28,7 @@ $(document).ready(function() {
         document.getElementsByClassName("first-article")[0].innerHTML=data.article_one;
         document.getElementsByClassName("article-title-second")[0].innerHTML=data.title_two;
         document.getElementsByClassName("second-article")[0].innerHTML=data.article_two;
+        document.getElementsByClassName("about-content")[0].innerHTML=data.about;
     });
       
 });
