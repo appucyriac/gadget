@@ -3,10 +3,7 @@ var password = document.getElementById("password"),
  email = document.getElementById("email"),
  modal = document.getElementById('myModal'),
  span = document.getElementsByClassName("close")[0],
- check = /(.+)@(.+){2,}\.(.+){2,}/
- article_json ={"article_one":"Welcome to my ongoing impressions of the iPhone X. I've entered my third full day with the phone. Day 2 was mostly a blur of media hits, after a nearly sleepless night. Everything you're reading here is new as of the afternoon of Wednesday, November 1. I'm a pretty quick adopter of weird, new tech. The iPhone X isn't even that weird: it's really an evolved iPhone, with a sharp design and some new ways to use it. But I found, sure enough, that my first day with Apple's top-end phone was a learning process. Face ID and its log-in process. All the new swipes and gestures and button-presses. Learning to accept The Notch In The Screen.",
-                "article_two":"It’s been a few months since the Samsung Galaxy S8 hit shelves, and it’s fair to say it’s changes phones a bit. Since Samsung unleashed its 2017 flagships the edge-to-edge design it started has spread. Now the Google Pixel 2 XL, iPhone X, LG V30 and Huawei Mate 10 Pro have it. But is the S8 still king?"};
-
+ check = /(.+)@(.+){2,}\.(.+){2,}/;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
@@ -25,8 +22,13 @@ $(document).ready(function() {
     $(".login-buttons").show();
     $(".logged-buttons").hide();
   });
-  document.getElementsByClassName("first-article")[0].innerHTML=article_json.article_one;
-  document.getElementsByClassName("second-article")[0].innerHTML=article_json.article_two;
+   $.getJSON('https://appucyriac.github.io/gadget/json/content.json', function (data) {
+      console.log(data);
+
+        document.getElementsByClassName("first-article")[0].innerHTML=data.article_one;
+        document.getElementsByClassName("second-article")[0].innerHTML=data.article_two;
+    });
+      
 });
 
 
