@@ -2,7 +2,7 @@
 <html>
  <head>
     <meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="css/element_style.css">
+	<link rel="stylesheet" type="text/css" href="file:///home/appu/Documents/gadget/css/element_style.css">
 	<link rel="stylesheet" type="text/css" href="css/button.css">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
@@ -14,8 +14,9 @@
 	
  </head>
  <body onload="loadContent()">
+ <main id="main_block">
    <header class="global-header">
-	 <main id="main_block"> 
+	    
 		<h1 id="main-title" style="font-family: 'Amatic SC', cursive">
 			G a d g e t   F r e a k
 		</h1>
@@ -36,40 +37,17 @@
    </header> 
   <section class="content">
   	 <article>
-
+        <a class="article-page" href="index.html"  style="text-decoration:none; color:inherit">
         <img class="side-image" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&qlt=95&.v=1504378258086" width="100" height="170" alt="iPhone X">
-
+        
         <h2 class="article-title-first"></h2> 
         <p class="article-content first-article">
 
-
         </p>
-        <button id="read_more_first" class="more article-content readMoreButton" onclick="loadFullContent(this.id)">Read More...</button>
-        <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClassOne" onclick="likeCounter()"/>
-        <h2 id="counterOne" class="likeClassOne likeCount">0</h2><h2 class="commentHeader likeClassOne">Comments</h2>
-        <p class="comments"></p>
-        <input type="comments" class="commentBox likeClassOne" placeholder="Type in your comments">
-
-        
-        <button type="submit" name="post" class="myButton postButton likeClassOne" id="myBtn" onclick="postComment()">Post</button>
+        </a>
      </article>     
-        	
-     <article>
-        <img class="side-image" src="https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=b1e52dd9252967784a9580c9de7ea7e3" width="140" height="170" alt="S8">
-        <h2 class="article-title-second"></h2>
-        <p class="article-content second-article">
-        </p>
-        <button id="read_more_second" class="more article-content readMoreButton" onclick="loadFullContent(this.id)">Read More...</button>
-
-     </article> 
   </section>
-        <div id="myModal" class="modal">
-       <div class="modal-content">
-        <span class="close">&times;</span>
-        <h4>Please sign in to your account</h4>
-       </div>
-      </div>  
-</main>
+   </main>>
   <footer class="global-footer">
 	   <h5>Copyright  © 2017 Gadget Freak Tech. All rights reserved.</h5>
 	   <div class="share">
