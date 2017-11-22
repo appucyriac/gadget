@@ -156,7 +156,7 @@ function likeCounter(likeButtonId) {
     if (likeButtonId == "likeButtonOne") {
       likeCount = parseInt(localStorage.getItem("like_count_one"));
       likeCount += 1;
-      localStorage.setItem("like_count_one", likeCount);
+      localStorage.setItem("like_count_one", parseInt(likeCount));
       $.getJSON('json/content.json', function(data) {
         console.log(data);
         data.articles[0].likeCount = likeCount;
