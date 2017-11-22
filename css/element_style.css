@@ -1,9 +1,19 @@
+header {
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: white;
+    clear: left;
+}
+
 h1 {
     color: grey;
     font-size: 300%;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family: 'Amatic SC', cursive;
 }
 
 h2 {
@@ -30,38 +40,12 @@ h4 {
     margin-left: 0;
 }
 
-h5 {
-    color: white;
-    font-size: 80%;
-}
-
 body {
     background-color: white;
     margin: 0;
     min-height: 400px;
     margin-bottom: 100px;
     clear: both;
-}
-
-header {
-    height: 50px;
-    padding: 0;
-    margin: 0;
-    color: white;
-    background-color: white;
-    clear: left;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: -20px;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    color: white;
-    background-color: #77BFC7;
-    clear: left;
 }
 
 form {
@@ -82,6 +66,22 @@ input[type=text], input[type=password], input[type=email] {
     box-sizing: border-box;
 }
 
+input[type=image] {
+    width: 40px;
+    height: 40px;
+    display: inline;
+    margin-left: 170px;
+}
+
+input[type=comments] {
+    width: 350px;
+    height: 40px;
+    display: inline;
+    margin-left: 170px;
+    margin-bottom: 8px;
+    padding-left: 15px;
+}
+
 form input[type="checkbox"] {
     width: 20px;
     top: 15px;
@@ -95,12 +95,49 @@ ul {
     background-color: #77BFC7;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    color: white;
+    background-color: #77BFC7;
+    clear: left;
+}
+
+/************************************* article style classes************************************/
+article:hover {
+    background-color: #CDFDF6;
+}
+
 .article-content {
     margin-left: 170px;
     font-family: 'Muli', sans-serif;
     padding: 0;
     overflow: hidden;
     display: flex;
+}
+
+.more {
+    background: lightblue;
+    color: navy;
+    font-size: 13px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.content {
+    margin: 0;
+    margin-top: 90px;
+    margin-bottom: -50px;
+}
+
+.side-image {
+    padding-left: -50px;
+    margin-left: 10px;
+    float: left;
 }
 
 .about-content {
@@ -128,12 +165,7 @@ ul {
     padding-bottom: -10px;
 }
 
-.content {
-    margin: 0;
-    margin-top: 90px;
-    margin-bottom: -50px;
-}
-
+/********************************** Share button style classes****************************************/
 .share {
     display: flex;
     float: right;
@@ -146,12 +178,7 @@ ul {
     height: 40px;
 }
 
-.side-image {
-    padding-left: -50px;
-    margin-left: 10px;
-    float: left;
-}
-
+/*********************************Pop-up style classes*******************************************/
 .modal {
     display: none;
     position: fixed;
@@ -173,6 +200,18 @@ ul {
     width: 36%;
 }
 
+.modal-article {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300%;
+    height: 300%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 .close {
     color: #aaa;
     float: right;
@@ -186,28 +225,7 @@ ul {
     cursor: pointer;
 }
 
-.login-buttons {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 20px;
-}
-
-.logged-buttons {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 20px;
-}
-
+/*********************************main menu style classes**********************************/
 .menu {
     float: left;
     display: block;
@@ -222,6 +240,125 @@ ul {
 .menu:hover {
     background-color: #95DDE5;
 }
-article:hover{
-    background-color: #CDFDF6;
+
+.logged-buttons {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+.login-buttons {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+/*************************************like and comment style classes************************/
+.likeCount {
+    margin-left: 172px;
+    margin-top: inherit;
+    padding: 0em;
+}
+
+.commentHeader {
+    font-size: 120%;
+}
+
+/************************************* Button styles****************************************/
+.myButton {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+    background: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf', GradientType=0);
+    background-color: #ededed;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #777777;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    margin-top: 20px;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+    background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed', GradientType=0);
+    background-color: #dfdfdf;
+}
+
+.myButton:active {
+    position: relative;
+}
+
+.readMoreButton {
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition: all 150ms linear;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none !important;
+    text-transform: none;
+    text-transform: capitalize;
+    color: #fff;
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 160px;
+    box-shadow: 2px 5px 10px var(--color-smoke);
+
+    &:hover {
+        transition: all 150ms linear;
+        opacity: .85;
+        color: #2DF7DA;
+    }
+
+    &:active {
+        transition: all 150ms linear;
+        opacity: .75;
+        outline: none;
+    }
+
+    &:focus {
+        outline: none;
+        dotted #959595;
+        outline-offset: -4px;
+    }
+
 }
