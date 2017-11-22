@@ -5,8 +5,7 @@ var password = document.getElementById("password"),
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
   comment = document.getElementsByClassName("commentBox")[0],
-  likeCount = parseInt(localStorage.getItem("like_count"));
- likeCount=0;
+  likeCount=0;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
@@ -26,6 +25,7 @@ $(document).ready(function() {
     $(".logged-buttons").hide();
   });
   $(".likeClassOne").hide();
+  likeCount = parseInt(localStorage.getItem("like_count"));
   document.getElementById("counterOne").innerHTML=likeCount;
 });
 
