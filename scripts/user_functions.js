@@ -6,7 +6,7 @@ var password = document.getElementById("password"),
   check = /(.+)@(.+){2,}\.(.+){2,}/,
   comment = document.getElementsByClassName("commentBox")[0],
   likeCount = parseInt(localStorage.getItem("like_count"));
-// likeCount=0;
+ likeCount=0;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
