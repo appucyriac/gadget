@@ -4,9 +4,9 @@ var password = document.getElementById("password"),
   modal = document.getElementById('myModal'),
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
-  comment =document.getElementsByClassName("commentBox")[0],
-  likeCount =parseInt(localStorage.getItem("like_count"));
- // likeCount=0;
+  comment = document.getElementsByClassName("commentBox")[0],
+  likeCount = parseInt(localStorage.getItem("like_count"));
+// likeCount=0;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
@@ -26,19 +26,18 @@ $(document).ready(function() {
     $(".logged-buttons").hide();
   });
   $(".likeClassOne").hide();
-  document.getElementById("counterOne").innerHTML = likeCount;
+  document.getElementById("counterOne").innerHTML=likeCount;
 });
 
 
 
 function logIn() {
-
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
     password.setCustomValidity("You will be redirected shortly");
     setTimeout(
       function() {
-        window.location = 'https://appucyriac.github.io/gadget/index.html'
+        window.location = '../index.html'
       }, 2500);
     if (stay_signed_in.checked) {
       localStorage.setItem("signed", "true");
@@ -73,7 +72,7 @@ function validatePassword() {
         password.setCustomValidity("You will be redirected shortly");
         setTimeout(
           function() {
-            window.location = 'https://appucyriac.github.io/gadget/index.html'
+            window.location = '../index.html'
           }, 2500);
       }
     }
@@ -100,36 +99,37 @@ function loadContent()
 
 {
   var trimmed_content;
-  $.getJSON('https://appucyriac.github.io/gadget/json/content.json', function(data) {
+  $.getJSON('json/content.json', function(data) {
     console.log(data);
-    document.getElementsByClassName("article-title-first")[0].innerHTML = data.title_one;
-    trimmed_content = trimContent(data.article_one);
-    document.getElementsByClassName("first-article")[0].innerHTML = trimmed_content;
-    document.getElementsByClassName("article-title-second")[0].innerHTML = data.title_two;
-    trimmed_content = trimContent(data.article_two);
-    document.getElementsByClassName("second-article")[0].innerHTML = trimmed_content;
+    $(".article-title-first")[0].innerHTML = data.articles[0].title;
+    trimmed_content = trimContent(data.articles[0].article);
+    $(".first-article")[0].innerHTML = trimmed_content;
+    $(".article-title-second")[0].innerHTML = data.articles[1].title;
+    trimmed_content = trimContent(data.articles[1].article);
+    $(".second-article")[0].innerHTML = trimmed_content;
   });
 }
 
 function loadAbout() {
-  $.getJSON('https://appucyriac.github.io/gadget/json/content.json', function(data) {
+  $.getJSON('../json/content.json', function(data) {
     console.log(data);
-    document.getElementsByClassName("about-content")[0].innerHTML = data.about;
+    $(".about-content")[0].innerHTML = data.articles[0].about;
   });
 }
 
 function loadFullContent(readMoreId) {
-  $.getJSON('https://appucyriac.github.io/gadget/json/content.json', function(data) {
+  $.getJSON('json/content.json', function(data) {
     console.log(data);
-    document.getElementsByClassName("article-title-first")[0].innerHTML = data.title_one;
+
+    $(".article-title-first")[0].innerHTML = data.articles[0].title;
     if (readMoreId == "read_more_first") {
-      document.getElementsByClassName("first-article")[0].innerHTML = data.article_one;
+      $(".first-article")[0].innerHTML = data.articles[0].article;
       $("#read_more_first").hide();
       $(".likeClassOne").show();
     }
-    document.getElementsByClassName("article-title-second")[0].innerHTML = data.title_two;
+    $(".article-title-second")[0].innerHTML = data.articles[1].title;
     if (readMoreId == "read_more_second") {
-      document.getElementsByClassName("second-article")[0].innerHTML = data.article_two;
+      $(".second-article")[0].innerHTML = data.articles[1].article;
       $("#read_more_second").hide();
     }
   });
@@ -143,17 +143,18 @@ function trimContent(str) {
 }
 
 function likeCounter() {
+
   if (localStorage.getItem("signed") == "true") {
     likeCount += 1;
-    localStorage.setItem("like_count",likeCount);
-    document.getElementById("counterOne").innerHTML = likeCount;
+    localStorage.setItem("like_count", likeCount);
+    document.getElementById("counterOne").innerHTML=likeCount;
+    debugger;
   } else {
     successPopup();
   }
 }
 
-function postComment()
-{
- localStorage.setItem("comments",comment);
-  document.getElementsByClassName("comments")[0].innerHTML=comment;
+function postComment() {
+  localStorage.setItem("comments", comment);
+  $("comments")[0].innerHTML = comment;
 }
