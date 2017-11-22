@@ -26,8 +26,8 @@ $(document).ready(function() {
   $(".likeClassOne").hide();
   $(".likeClassTwo").hide();
   $.getJSON('json/content.json', function(data) {
-    data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
-    data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
+    //data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
+    //data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
     document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
     document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
 
