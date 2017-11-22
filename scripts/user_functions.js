@@ -165,5 +165,5 @@ function likeCounter(likeButtonId) {
 
 function postComment() {
   localStorage.setItem("comments", comment);
-  $("comments")[0].innerHTML = comment;
+  $(".comments")[0].innerHTML = comment;
 }
