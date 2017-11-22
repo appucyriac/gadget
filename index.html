@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/element_style.css">
@@ -38,10 +37,10 @@
                 <p class="article-content first-article">
                 </p>
                 <button id="read_more_first" class="more article-content readMoreButton" onclick="loadFullContent(this.id)">Read More...</button>
-                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClassOne" onclick="likeCounter()"/>
-                <h2 id="counterOne" class="likeClassOne likeCount">0</h2>
-                <h2 class="commentHeader likeClassOne">Comments</h2>
-                <p class="comments"></p>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClassOne" onclick="likeCounter(this.id)"/>
+                <p id="counterOne" class="likeClassOne likeCount">0</p>
+                <p class="commentHeader likeClassOne">Comments</p>
+                <p class="allComments"></p>
                 <input type="comments" class="commentBox likeClassOne" placeholder="Type in your comments">
                 <button type="submit" name="post" class="myButton postButton likeClassOne" id="myBtn" onclick="postComment()">Post</button>
             </article>
@@ -50,6 +49,12 @@
                 <h2 class="article-title-second"></h2>
                 <p class="article-content second-article"></p>
                 <button id="read_more_second" class="more article-content readMoreButton" onclick="loadFullContent(this.id)">Read More...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonTwo" class="likeClassTwo" onclick="likeCounter(this.id)"/>
+                <p id="counterTwo" class="likeClassTwo likeCount">0</p>
+                <p class="commentHeader likeClassTwo">Comments</h2>
+                <p class="allComments"></p>
+                <input type="comments" class="commentBox likeClassTwo" placeholder="Type in your comments" id=commentBoxId>
+                <button type="submit" name="post" class="myButton postButton likeClassTwo" id="myBtn" onclick="postComment()">Post</button>
             </article>
         </section>
         <div id="myModal" class="modal">

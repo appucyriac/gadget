@@ -1,3 +1,11 @@
+body {
+    background-color: white;
+    margin: 0;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+
 header {
     height: 50px;
     padding: 0;
@@ -38,25 +46,6 @@ h4 {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0;
-}
-body {
-    background-color: white;
-    margin: 0;
-    min-height: 400px;
-    margin-bottom: 100px;
-    clear: both;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: -20px;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    color: white;
-    background-color: #77BFC7;
-    clear: left;
 }
 
 form {
@@ -104,6 +93,18 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #77BFC7;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    color: white;
+    background-color: #77BFC7;
+    clear: left;
 }
 
 /************************************* article style classes************************************/
@@ -267,10 +268,19 @@ article:hover {
     margin-left: 172px;
     margin-top: inherit;
     padding: 0em;
+    margin-bottom: -14px;
 }
 
 .commentHeader {
     font-size: 120%;
+    margin-left: 170px;
+    margin-bottom: -20px;
+}
+
+.allComments {
+    margin-left: 200px;
+    margin-bottom: 0;
+    margin-top: 20px;
 }
 
 /************************************* Button styles****************************************/

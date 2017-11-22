@@ -4,8 +4,7 @@ var password = document.getElementById("password"),
   modal = document.getElementById('myModal'),
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
-  comment = document.getElementsByClassName("commentBox")[0],
-  likeCount=0;
+  likeCount = 0;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
@@ -25,8 +24,15 @@ $(document).ready(function() {
     $(".logged-buttons").hide();
   });
   $(".likeClassOne").hide();
-  likeCount = parseInt(localStorage.getItem("like_count"));
-  document.getElementById("counterOne").innerHTML=likeCount;
+  $(".likeClassTwo").hide();
+  $.getJSON('json/content.json', function(data) {
+    data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
+    data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
+    document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
+    document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
+
+  });
+
 });
 
 
@@ -103,7 +109,7 @@ function loadContent()
     console.log(data);
     $(".article-title-first")[0].innerHTML = data.articles[0].title;
     trimmed_content = trimContent(data.articles[0].article);
-    $(".first-article")[0].innerHTML = trimmed_content;
+    $(".first-article")[0].innerHTML = trimmed_content; //only trimmed contents are shown on the homepage.
     $(".article-title-second")[0].innerHTML = data.articles[1].title;
     trimmed_content = trimContent(data.articles[1].article);
     $(".second-article")[0].innerHTML = trimmed_content;
@@ -131,6 +137,7 @@ function loadFullContent(readMoreId) {
     if (readMoreId == "read_more_second") {
       $(".second-article")[0].innerHTML = data.articles[1].article;
       $("#read_more_second").hide();
+      $(".likeClassTwo").show();
     }
   });
 }
@@ -142,19 +149,41 @@ function trimContent(str) {
 
 }
 
-function likeCounter() {
+function likeCounter(likeButtonId) {
 
   if (localStorage.getItem("signed") == "true") {
-    likeCount += 1;
-    localStorage.setItem("like_count", likeCount);
-    document.getElementById("counterOne").innerHTML=likeCount;
     debugger;
+    if (likeButtonId == "likeButtonOne") {
+      likeCount = parseInt(localStorage.getItem("like_count_one"));
+      likeCount += 1;
+      localStorage.setItem("like_count_one", likeCount);
+      $.getJSON('json/content.json', function(data) {
+        console.log(data);
+        data.articles[0].likeCount = likeCount;
+        document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
+      });
+    }
+    if (likeButtonId == "likeButtonTwo") {
+      likeCount = parseInt(localStorage.getItem("like_count_two"));
+      likeCount += 1;
+      localStorage.setItem("like_count_two", likeCount);
+      $.getJSON('json/content.json', function(data) {
+        console.log(data);
+        data.articles[1].likeCount = likeCount;
+        document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
+      });
+    }
   } else {
     successPopup();
   }
 }
 
 function postComment() {
-  localStorage.setItem("comments", comment);
-  $("comments")[0].innerHTML = comment;
+  comment = document.getElementsByClassName("commentBox")[0].value,
+    $.getJSON('json/content.json', function(data) {
+      console.log(data);
+      data.articles[0].comments = comment;
+      $(".allComments")[0].innerHTML = data.articles[0].comments;
+    });
+
 }
