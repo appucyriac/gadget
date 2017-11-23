@@ -1,7 +1,7 @@
 var password = document.getElementById("password"),
   confirm_password = document.getElementById("confirm_password"),
   email = document.getElementById("email"),
-  modal = document.getElementsByClassName("popUp")[0],
+  popUp = document.getElementsByClassName("popUp")[0],
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
@@ -88,14 +88,14 @@ function validatePassword() {
 function successPopup() {
 
 
-  modal.style.display = "block";
+  popUp.style.display = "block";
   span.onclick = function() {
-    modal.style.display = "none";
+    popUp.style.display = "none";
   }
 
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == popUp) {
+      popUp.style.display = "none";
     }
   }
 
