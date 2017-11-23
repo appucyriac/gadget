@@ -78,7 +78,7 @@ input[type=comments] {
     height: 40px;
     display: inline;
     margin-left: 170px;
-    margin-bottom: 8px;
+    margin-bottom: -11px;
     padding-left: 15px;
 }
 
@@ -126,6 +126,7 @@ article:hover {
     font-size: 13px;
     padding: 3px;
     cursor: pointer;
+    margin-left: 170px;
 }
 
 .content {
@@ -370,4 +371,7 @@ article:hover {
         outline-offset: -4px;
     }
 
+}
+.postButton{
+    margin-left: 170px;
 }

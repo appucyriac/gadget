@@ -23,13 +23,31 @@ $(document).ready(function() {
     $(".login-buttons").show();
     $(".logged-buttons").hide();
   });
-  $(".likeClassOne").hide();
-  $(".likeClassTwo").hide();
+  $(".likeClass").hide();
   $.getJSON('json/content.json', function(data) {
-    //  data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
-    //  data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
-    document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
-    document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
+    var jsonData = JSON.parse(localStorage.getItem("content"));
+    localStorage.setItem("content", JSON.stringify(data));
+
+    for (i = 0; i < data.articles.length; i++) {
+      if (jsonData.articles[i] == null) {
+        localStorage.setItem("content", JSON.stringify(data));
+        for (var i = 0; i < data.articles.length; i++) {
+          {
+            for (var j = 0; j < data.articles[i].comments.length; j++) {
+              $(".allComments")[i].innerHTML = data.articles[i].comments[j].comment;
+            }
+            $(".counter")[i].innerHTML = data.articles[i].likeCount;
+          }
+
+        }
+      } else {
+        $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
+        for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
+          debugger;
+          $(".allComments")[i].innerHTML += jsonData.articles[i].comments[j].comment + ", ";
+        }
+      }
+    }
 
   });
 
@@ -37,7 +55,7 @@ $(document).ready(function() {
 
 
 
-function logIn() {
+function signInValidation() {
   if (password.value == "123" && email.value == "appu@qburst.com") {
     successPopup();
     password.setCustomValidity("You will be redirected shortly");
@@ -58,21 +76,17 @@ function logIn() {
   }
 }
 
-function validatePassword() {
+function signUpValidation() {
 
-
-  if (check.test(email.value) == false) {
-    email.setCustomValidity("Invalid email");
-    return (false);
+  if (password.value == "" || confirm_password.value == "" || email.value == "") {
+    confirm_password.setCustomValidity("Please fill in all fields");
   } else {
-
-    if (password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("Passwords Don't Match");
+    if (check.test(email.value) == false) {
+      email.setCustomValidity("Invalid email");
+      return (false);
     } else {
-
-
-      if (password.value == "" || confirm_password.value == "" || email.value == "") {
-        confirm_password.setCustomValidity("Please fill in all fields");
+      if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
       } else {
         successPopup();
         password.setCustomValidity("You will be redirected shortly");
@@ -101,44 +115,33 @@ function successPopup() {
 
 }
 
-function loadContent()
-
-{
+function loadContent() {
   var trimmed_content;
   $.getJSON('json/content.json', function(data) {
     console.log(data);
-    $(".article-title-first")[0].innerHTML = data.articles[0].title;
-    trimmed_content = trimContent(data.articles[0].article);
-    $(".first-article")[0].innerHTML = trimmed_content; //only trimmed contents are shown on the homepage.
-    $(".article-title-second")[0].innerHTML = data.articles[1].title;
-    trimmed_content = trimContent(data.articles[1].article);
-    $(".second-article")[0].innerHTML = trimmed_content;
+    for (var i = 0; i < data.articles.length; i += 1) {
+      $(".article-title")[i].innerHTML = data.articles[i].title;
+      trimmed_content = trimContent(data.articles[i].article);
+      $(".article-content")[i].innerHTML = trimmed_content;
+    } //only trimmed contents are shown on the homepage
   });
 }
 
-function loadAbout() {
-  $.getJSON('../json/content.json', function(data) {
-    console.log(data);
-    $(".about-content")[0].innerHTML = data.articles[0].about;
-  });
-}
-
-function loadFullContent(readMoreId) {
+function loadFullContent(readMoreButtonNumber) {
   $.getJSON('json/content.json', function(data) {
     console.log(data);
 
-    $(".article-title-first")[0].innerHTML = data.articles[0].title;
-    if (readMoreId == "read_more_first") {
-      $(".first-article")[0].innerHTML = data.articles[0].article;
-      $("#read_more_first").hide();
-      $(".likeClassOne").show();
-    }
-    $(".article-title-second")[0].innerHTML = data.articles[1].title;
-    if (readMoreId == "read_more_second") {
-      $(".second-article")[0].innerHTML = data.articles[1].article;
-      $("#read_more_second").hide();
-      $(".likeClassTwo").show();
-    }
+    $(".article-title")[readMoreButtonNumber].innerHTML = data.articles[readMoreButtonNumber].title;
+    $(".article-content")[readMoreButtonNumber].innerHTML = data.articles[readMoreButtonNumber].article;
+    $(".readMoreButton")[readMoreButtonNumber].style.display = 'none';
+    $(".commentHeader")[readMoreButtonNumber].style.display = 'block';
+    $(".allComments")[readMoreButtonNumber].style.display = 'block';
+    $(".postButton")[readMoreButtonNumber].style.display = 'block';
+    $(".likeButton")[readMoreButtonNumber].style.display = 'block';
+    $(".commentBox")[readMoreButtonNumber].style.display = 'block';
+    $(".likeCount")[readMoreButtonNumber].style.display = 'block';
+
+
   });
 }
 
@@ -149,41 +152,43 @@ function trimContent(str) {
 
 }
 
-function likeCounter(likeButtonId) {
+function likeCounter(likeButtonNumber) {
 
   if (localStorage.getItem("signed") == "true") {
-    debugger;
-    if (likeButtonId == "likeButtonOne") {
-      likeCount = parseInt(localStorage.getItem("like_count_one"));
-      likeCount += 1;
-      localStorage.setItem("like_count_one", parseInt(likeCount));
-      $.getJSON('json/content.json', function(data) {
-        console.log(data);
-        data.articles[0].likeCount = likeCount;
-        document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
-      });
-    }
-    if (likeButtonId == "likeButtonTwo") {
-      likeCount = parseInt(localStorage.getItem("like_count_two"));
-      likeCount += 1;
-      localStorage.setItem("like_count_two", likeCount);
-      $.getJSON('json/content.json', function(data) {
-        console.log(data);
-        data.articles[1].likeCount = likeCount;
-        document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
-      });
-    }
+    var retrievedObject = JSON.parse(localStorage.getItem("content"));
+    likeCount = retrievedObject.articles[likeButtonNumber].likeCount;
+    likeCount += 1;
+    retrievedObject.articles[likeButtonNumber].likeCount = likeCount;
+    localStorage.setItem("content", JSON.stringify(retrievedObject));
+    $.getJSON('json/content.json', function(data) {
+      console.log(data);
+      data.articles[likeButtonNumber].likeCount = likeCount;
+      document.getElementsByClassName("counter")[likeButtonNumber].innerHTML = likeCount;
+    });
+
   } else {
     successPopup();
   }
 }
 
-function postComment() {
-  comment = document.getElementsByClassName("commentBox")[0].value,
+function postComment(commentBoxNumber) {
+  if (localStorage.getItem("signed") == "true") {
+    comment = document.getElementsByClassName("commentBox")[commentBoxNumber].value;
+    var retrievedObject = JSON.parse(localStorage.getItem("content"));
     $.getJSON('json/content.json', function(data) {
       console.log(data);
-      data.articles[0].comments = comment;
-      $(".allComments")[0].innerHTML = data.articles[0].comments;
+      var newComment = {
+        "comment": comment
+      };
+      newComment = JSON.stringify(newComment);
+      debugger;
+      retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
+      localStorage.setItem("content", JSON.stringify(retrievedObject));
+      $(".allComments")[commentBoxNumber].innerHTML += " "+comment;
+    
     });
+  } else {
+    successPopup();
+  }
 
 }
