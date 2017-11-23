@@ -1,7 +1,7 @@
 var password = document.getElementById("password"),
   confirm_password = document.getElementById("confirm_password"),
   email = document.getElementById("email"),
-  modal = document.getElementById('myModal'),
+  modal = document.getElementsByClassName("popUp")[0],
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
