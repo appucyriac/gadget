@@ -1,7 +1,7 @@
 var password = document.getElementById("password"),
   confirm_password = document.getElementById("confirm_password"),
   email = document.getElementById("email"),
-  modal = document.getElementById('myModal'),
+  popUp = document.getElementById("successPopUp"),
   span = document.getElementsByClassName("close")[0],
   check = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
@@ -26,8 +26,8 @@ $(document).ready(function() {
   $(".likeClassOne").hide();
   $(".likeClassTwo").hide();
   $.getJSON('json/content.json', function(data) {
-  //  data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
-  //  data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
+    //  data.articles[0].likeCount = parseInt(localStorage.getItem("like_count_one"));
+    //  data.articles[1].likeCount = parseInt(localStorage.getItem("like_count_two"));
     document.getElementById("counterOne").innerHTML = data.articles[0].likeCount;
     document.getElementById("counterTwo").innerHTML = data.articles[1].likeCount;
 
@@ -88,14 +88,14 @@ function validatePassword() {
 function successPopup() {
 
 
-  modal.style.display = "block";
+  popUp.style.display = "block";
   span.onclick = function() {
-    modal.style.display = "none";
+    popUp.style.display = "none";
   }
 
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == popUp) {
+      popUp.style.display = "none";
     }
   }
 
@@ -156,7 +156,7 @@ function likeCounter(likeButtonId) {
     if (likeButtonId == "likeButtonOne") {
       likeCount = parseInt(localStorage.getItem("like_count_one"));
       likeCount += 1;
-      localStorage.setItem("like_count_one", likeCount);
+      localStorage.setItem("like_count_one", parseInt(likeCount));
       $.getJSON('json/content.json', function(data) {
         console.log(data);
         data.articles[0].likeCount = likeCount;

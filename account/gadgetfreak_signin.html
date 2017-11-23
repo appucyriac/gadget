@@ -39,12 +39,12 @@
                 <h3><label>Password</label></h3>
                 <input type="password" placeholder="Enter Password" name="psw" required id="password">
                 <div class="clearfix">
-                    <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="logIn()">Sign in</button>
-                    <a href="../index.html" class="myButton">Cancel</a>
+                    <button type="submit" name="Sign up" class="globalButton" id="signInButton" onclick="logIn()">Sign in</button>
+                    <a href="../index.html" class="globalButton">Cancel</a>
                     <h3>Remember me</h3>
                     <input type="checkbox" checked="checked" id="stay_signed_in">
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
+                    <div id="successPopUp" class="popUp">
+                        <div class="popUp-content">
                             <span class="close">&times;</span>
                             <h4>You are now logged in</h4>
                         </div>
@@ -53,7 +53,7 @@
             </div>
         </form>
         <footer class="global-footer">
-            <p>Copyright © 2017 Gadget Freak Tech. All rights reserved.</p>>
+            <p>Copyright © 2017 Gadget Freak Tech. All rights reserved.</p>
             <div class="share">
                 <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
          <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
@@ -67,7 +67,7 @@
             </div>
         </footer>
         <script src="../scripts/user_functions.js"></script>
-    </main>>
+    </main>
 </body>
 
 </html>
