@@ -179,7 +179,7 @@ article:hover {
 }
 
 /*********************************Pop-up style classes*******************************************/
-.modal {
+.popUp {
     display: none;
     position: fixed;
     left: 0;
@@ -191,7 +191,7 @@ article:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
+.popUp-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -200,7 +200,7 @@ article:hover {
     width: 36%;
 }
 
-.modal-article {
+.popUp-article {
     display: none;
     position: fixed;
     left: 0;
@@ -284,7 +284,7 @@ article:hover {
 }
 
 /************************************* Button styles****************************************/
-.myButton {
+.globalButton {
     -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
     -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
     box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -312,7 +312,7 @@ article:hover {
     margin-top: 20px;
 }
 
-.myButton:hover {
+.globalButton:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
     background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
     background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
@@ -323,7 +323,7 @@ article:hover {
     background-color: #dfdfdf;
 }
 
-.myButton:active {
+.globalButton:active {
     position: relative;
 }
 

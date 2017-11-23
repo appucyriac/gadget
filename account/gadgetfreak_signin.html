@@ -39,12 +39,12 @@
                 <h3><label>Password</label></h3>
                 <input type="password" placeholder="Enter Password" name="psw" required id="password">
                 <div class="clearfix">
-                    <button type="submit" name="Sign up" class="myButton" id="myBtn" onclick="logIn()">Sign in</button>
-                    <a href="../index.html" class="myButton">Cancel</a>
+                    <button type="submit" name="Sign up" class="globalButton" id="signInButton onclick="logIn()">Sign in</button>
+                    <a href="../index.html" class="globalButton">Cancel</a>
                     <h3>Remember me</h3>
                     <input type="checkbox" checked="checked" id="stay_signed_in">
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
+                    <div id="signInPopUp" class="popUp">
+                        <div class="popUp-content">
                             <span class="close">&times;</span>
                             <h4>You are now logged in</h4>
                         </div>

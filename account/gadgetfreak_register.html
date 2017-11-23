@@ -40,10 +40,10 @@
                 <h3><label>Confirm Password</label></h3>
                 <input type="password" placeholder="Confirm Password" name="psw-repeat" required id="confirm_password">
                 <div class="clearfix">
-                    <button type="submit" name="sign up" class="myButton" id="myBtn" onclick="validatePassword()">Sign up</button>
-                    <a href="../index.html" class="myButton">Cancel</a>
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
+                    <button type="submit" name="sign up" class="globalButton" id="signUpButton" onclick="validatePassword()">Sign up</button>
+                    <a href="../index.html" class="globalButton">Cancel</a>
+                    <div id="signUpPopUp" class="popUp">
+                        <div class="popUp-content">
                             <span class="close">&times;</span>
                             <h4>Thank you for registering with us.</h4>
                         </div>
