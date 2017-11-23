@@ -26,7 +26,7 @@ $(document).ready(function() {
   $(".likeClass").hide();
   $.getJSON('json/content.json', function(data) {
     var jsonData = JSON.parse(localStorage.getItem("content"));
-    //localStorage.setItem("content", JSON.stringify(data));
+    localStorage.setItem("content", JSON.stringify(data));
     for (i = 0; i < data.articles.length; i++) {
       if (jsonData.articles[i] == null) {
         localStorage.setItem("content", JSON.stringify(data));
