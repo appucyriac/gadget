@@ -44,7 +44,7 @@ $(document).ready(function() {
         $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
         for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
           debugger;
-          $(".allComments")[i].innerHTML += jsonData.articles[i].comments[j].comment+", ";
+          $(".allComments")[i].innerHTML += jsonData.articles[i].comments[j].comment + ", ";
         }
       }
     }
@@ -155,11 +155,7 @@ function trimContent(str) {
 function likeCounter(likeButtonNumber) {
 
   if (localStorage.getItem("signed") == "true") {
-
-    //localStorage.setItem("content",JSON.stringify(data));
     var retrievedObject = JSON.parse(localStorage.getItem("content"));
-
-    //likeCount = parseInt(localStorage.getItem("like_count"));
     likeCount = retrievedObject.articles[likeButtonNumber].likeCount;
     likeCount += 1;
     retrievedObject.articles[likeButtonNumber].likeCount = likeCount;
@@ -167,8 +163,6 @@ function likeCounter(likeButtonNumber) {
     $.getJSON('json/content.json', function(data) {
       console.log(data);
       data.articles[likeButtonNumber].likeCount = likeCount;
-      //var fs=require('fs');
-      //fs.writeFile('json/content.json')
       document.getElementsByClassName("counter")[likeButtonNumber].innerHTML = likeCount;
     });
 
@@ -190,9 +184,8 @@ function postComment(commentBoxNumber) {
       debugger;
       retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
       localStorage.setItem("content", JSON.stringify(retrievedObject));
-      for (i = 0; i < retrievedObject.articles[commentBoxNumber].comments.length; i++) {
-        $(".allComments")[commentBoxNumber].innerHTML += " "+ comment ;
-      }
+      $(".allComments")[commentBoxNumber].innerHTML += " "+comment;
+    
     });
   } else {
     successPopup();
