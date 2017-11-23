@@ -43,7 +43,7 @@ $(document).ready(function() {
         $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
         for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
           debugger;
-          $(".allComments")[i].innerHTML = jsonData.articles[i].comments[j].comment;
+          $(".allComments")[i].innerHTML +=" "+ jsonData.articles[i].comments[j].comment;
         }
       }
     }
