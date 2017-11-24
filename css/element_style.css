@@ -79,12 +79,20 @@ input[type=comments] {
     display: inline;
     margin-left: 170px;
     margin-bottom: -11px;
-    padding-left: 15px;
+    padding-left: 8px;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=image]:focus, input[type=comments]:focus {
+    outline: none;
 }
 
 form input[type="checkbox"] {
     width: 20px;
     top: 15px;
+}
+
+form input[type="checkbox"]:focus {
+    outline: none;
 }
 
 ul {
@@ -118,15 +126,6 @@ article:hover {
     padding: 0;
     overflow: hidden;
     display: flex;
-}
-
-.more {
-    background: lightblue;
-    color: navy;
-    font-size: 13px;
-    padding: 3px;
-    cursor: pointer;
-    margin-left: 170px;
 }
 
 .content {
@@ -213,14 +212,14 @@ article:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.close {
+.closeButton {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.closeButton:hover, .closeButton:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -311,6 +310,11 @@ article:hover {
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
     margin-top: 20px;
+
+    &:focus {
+        outline: none;
+    }
+
 }
 
 .globalButton:hover {
@@ -326,6 +330,7 @@ article:hover {
 
 .globalButton:active {
     position: relative;
+    outline: none;
 }
 
 .readMoreButton {
@@ -352,6 +357,12 @@ article:hover {
     align-items: center;
     flex: 0 0 160px;
     box-shadow: 2px 5px 10px var(--color-smoke);
+    background: lightblue;
+    font-size: 13px;
+    padding: 3px;
+    cursor: pointer;
+    margin-left: 170px;
+    margin-bottom: 7px;
 
     &:hover {
         transition: all 150ms linear;
@@ -372,6 +383,11 @@ article:hover {
     }
 
 }
-.postButton{
+
+.postButton {
     margin-left: 170px;
+}
+
+.postButton:focus {
+    outline: none;
 }

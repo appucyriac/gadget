@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../css/element_style.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../scripts/user_functions.js"></script>
     <title>Gadget Freak: Contact Us</title>
 </head>
-
 <body>
     <main id="main_block">
         <header class="global-header">
@@ -40,10 +39,10 @@
                 <h3><label>Comments</label></h3>
                 <input type="text" placeholder="Add Comments" name="psw-repeat" required autocomplete="off">
                 <div class="clearfix">
-                    <button type="submit" name="contact" class="globalButton" id="contactUsButton" onclick="successPopup()">Contact Us</button>
-                    <div id="successPopUp" class="popUp">
+                    <button type="submit" name="contact" class="globalButton" id="contactUsButton" onclick="contactGadgetFreak()">Contact Us</button>
+                    <div id="messagePopUp" class="popUp">
                         <div class="popUp-content">
-                            <span class="close">&times;</span>
+                            <span class="closeButton">&times;</span>
                             <h4>Thanks for writing to us. We will get back to you shortly.</h4>
                         </div>
                     </div>
@@ -54,18 +53,16 @@
             <p>Copyright © 2017 Gadget Freak Tech. All rights reserved.</p>
             <div class="share">
                 <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
                 <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
                 <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                </a>
             </div>
-        </footer>
-        <script src="../scripts/user_functions.js"></script>
+        </footer>       
     </main>
 </body>
-
 </html>
