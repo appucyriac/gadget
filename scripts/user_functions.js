@@ -24,7 +24,7 @@ $(document).ready(function() {
   });
   $(".likeClass").hide();
   $(".readLess").hide();
-  if (window.location.href == "https://appucyriac.github.io/gadget/index.html") {
+  if (window.location.href == "https://appucyriac.github.io/gadget/") {
     $.getJSON("/gadget/json/content.json", function(data) {
       if (localStorage.getItem("content") == null) {
         localStorage.setItem("content", JSON.stringify(data));
