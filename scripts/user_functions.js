@@ -1,8 +1,6 @@
 var password_field = $("#passwordField")[0],
   confirm_password_field = $("#confirmPasswordField")[0],
   email_field = $("#emailField")[0],
-  message_popup = $("#messagePopUp")[0],
-  close_button = $(".closeButton")[0],
   email_regex = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
 
