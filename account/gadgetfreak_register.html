@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../css/element_style.css">
@@ -9,7 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Gadget Freak: Signup</title>
 </head>
-
 <body>
     <main id="main_block">
         <header class="global-header">
@@ -34,17 +32,17 @@
         <form action="/action_page.php">
             <div class="container">
                 <h3><label>Email</label></h3>
-                <input type="email" placeholder="Enter Email" name="email" required id="email" autocomplete="off">
+                <input type="email" placeholder="Enter Email" name="email" required id="emailField" autocomplete="off">
                 <h3><label>Password</label></h3>
-                <input type="password" placeholder="Enter Password" name="psw" required id="password">
+                <input type="password" placeholder="Enter Password" name="psw" required id="passwordField">
                 <h3><label>Confirm Password</label></h3>
-                <input type="password" placeholder="Confirm Password" name="psw-repeat" required id="confirm_password">
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" required id="confirmPasswordField">
                 <div class="clearfix">
-                    <button type="submit" name="sign up" class="globalButton" id="signUpButton" onclick="signUpValidation()">Sign up</button>
+                    <button type="submit" name="sign up" class="globalButton" id="signUpButton" onclick="validateSignUp()">Sign up</button>
                     <a href="../index.html" class="globalButton">Cancel</a>
-                    <div id="successPopUp" class="popUp">
+                    <div id="messagePopUp" class="popUp">
                         <div class="popUp-content">
-                            <span class="close">&times;</span>
+                            <span class="closeButton">&times;</span>
                             <h4>Thank you for registering with us.</h4>
                         </div>
                     </div>
@@ -55,14 +53,14 @@
             <p>Copyright © 2017 Gadget Freak Tech. All rights reserved.</p>
             <div class="share">
                 <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
                 <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
                 <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-         <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-        </a>
+                <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                </a>
             </div>
         </footer>
         <script src="../scripts/user_functions.js"></script>

@@ -1,15 +1,14 @@
-var password = document.getElementById("password"),
-  confirm_password = document.getElementById("confirm_password"),
-  email = document.getElementById("email"),
-  popUp = document.getElementById("successPopUp"),
-  span = document.getElementsByClassName("close")[0],
-  check = /(.+)@(.+){2,}\.(.+){2,}/,
+var password_field = $("#passwordField")[0],
+  confirm_password_field = $("#confirmPasswordField")[0],
+  email_field = $("#emailField")[0],
+  message_popup = $("#messagePopUp")[0],
+  close_button = $(".closeButton")[0],
+  email_regex = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
 
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
   if (usr == "true") {
-
     $(".login-buttons").hide();
     $(".logged-buttons").show();
   } else {
@@ -24,33 +23,37 @@ $(document).ready(function() {
     $(".logged-buttons").hide();
   });
   $(".likeClass").hide();
-  $.getJSON('json/content.json', function(data) {
-    if (localStorage.getItem("content") == null) {
-      localStorage.setItem("content", JSON.stringify(data));
-    } else {
-      var jsonData = JSON.parse(localStorage.getItem("content"));
-      
-      for (var i = 0; i < data.articles.length; i++) {
-        $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
-        for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
-          $(".allComments")[i].innerHTML += jsonData.articles[i].comments[j].comment + ", ";
+  $(".readLess").hide();
+  if (window.location.href == "http://10.9.12.111/gadget/index.html") {
+    $.getJSON("/gadget/json/content.json", function(data) {
+      if (localStorage.getItem("content") == null) {
+        localStorage.setItem("content", JSON.stringify(data));
+      } else {
+        var jsonData = JSON.parse(localStorage.getItem("content"));
+
+        for (var i = 0; i < data.articles.length; i++) {
+          $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
+          for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
+            if (jsonData.articles[i].comments[j].comment != null) {
+              var listNode = document.createElement("li");
+              var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
+              listNode.appendChild(commentNode);
+              $(".allComments")[i].append(listNode);
+            }
+          }
         }
       }
-    }
-
-  });
-
+    });
+  }
 });
 
-
-
-function signInValidation() {
-  if (password.value == "123" && email.value == "appu@qburst.com") {
-    successPopup();
-    password.setCustomValidity("You will be redirected shortly");
+function validateSignIn() {
+  if (password_field.value == "123" && email_field.value == "appu@qburst.com") {
+    showPopUp();
+    password_field.setCustomValidity("You will be redirected shortly");
     setTimeout(
       function() {
-        window.location = '../index.html'
+        window.location = "../index.html"
       }, 2500);
     if (stay_signed_in.checked) {
       localStorage.setItem("signed", "true");
@@ -58,47 +61,52 @@ function signInValidation() {
       $(".login-buttons").hide();
       $(".logged-buttons").show();
     }
-
   } else {
-
-    password.setCustomValidity("Invalid User ID/Password");
+    password_field.setCustomValidity("Invalid User ID/Password");
   }
 }
 
-function signUpValidation() {
-
-  if (password.value == "" || confirm_password.value == "" || email.value == "") {
-    confirm_password.setCustomValidity("Please fill in all fields");
+function validateSignUp() {
+  if (password_field.value == "" || confirm_password_field.value == "" || email_field.value == "") {
+    confirm_password_field.setCustomValidity("Please fill in all fields");
   } else {
-    if (check.test(email.value) == false) {
-      email.setCustomValidity("Invalid email");
+    if (email_regex.test(email_field.value) == false) {
+      email_field.setCustomValidity("Invalid email");
       return (false);
     } else {
-      if (password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
+      if (password_field.value != confirm_password_field.value) {
+        confirm_password_field.setCustomValidity("Passwords Don't Match");
       } else {
-        successPopup();
-        password.setCustomValidity("You will be redirected shortly");
+        showPopUp();
+        password_field.setCustomValidity("You will be redirected shortly");
         setTimeout(
           function() {
-            window.location = '../index.html'
+            window.location = "../index.html"
           }, 2500);
       }
     }
   }
 }
 
-function successPopup() {
+function contactGadgetFreak() {
+  showPopUp();
+  setTimeout(
+    function() {
+      window.location = "../index.html"
+    }, 2500);
 
+}
 
-  popUp.style.display = "block";
-  span.onclick = function() {
-    popUp.style.display = "none";
+function showPopUp() {
+  var close_button = $(".closeButton")[0];
+  var message_popup = $("#messagePopUp")[0];
+  message_popup.style.display = "block";
+  close_button.onclick = function() {
+    message_popup.style.display = "none";
   }
-
   window.onclick = function(event) {
-    if (event.target == popUp) {
-      popUp.style.display = "none";
+    if (event.target == message_popup) {
+      message_popup.style.display = "none";
     }
   }
 
@@ -106,8 +114,7 @@ function successPopup() {
 
 function loadContent() {
   var trimmed_content;
-  $.getJSON('json/content.json', function(data) {
-    console.log(data);
+  $.getJSON("json/content.json", function(data) {
     for (var i = 0; i < data.articles.length; i += 1) {
       $(".article-title")[i].innerHTML = data.articles[i].title;
       trimmed_content = trimContent(data.articles[i].article);
@@ -117,21 +124,18 @@ function loadContent() {
 }
 
 function loadFullContent(readMoreButtonNumber) {
-  $.getJSON('json/content.json', function(data) {
-    console.log(data);
-
+  $.getJSON("json/content.json", function(data) {
     $(".article-title")[readMoreButtonNumber].innerHTML = data.articles[readMoreButtonNumber].title;
     $(".article-content")[readMoreButtonNumber].innerHTML = data.articles[readMoreButtonNumber].article;
-    $(".readMoreButton")[readMoreButtonNumber].style.display = 'none';
-    $(".commentHeader")[readMoreButtonNumber].style.display = 'block';
-    $(".allComments")[readMoreButtonNumber].style.display = 'block';
-    $(".postButton")[readMoreButtonNumber].style.display = 'block';
-    $(".likeButton")[readMoreButtonNumber].style.display = 'block';
-    $(".commentBox")[readMoreButtonNumber].style.display = 'block';
-    $(".likeCount")[readMoreButtonNumber].style.display = 'block';
-
-
+    $(".readMore")[readMoreButtonNumber].style.display = "none";
+    $(".commentHeader")[readMoreButtonNumber].style.display = "block";
+    $(".allComments")[readMoreButtonNumber].style.display = "block";
+    $(".postButton")[readMoreButtonNumber].style.display = "block";
+    $(".likeButton")[readMoreButtonNumber].style.display = "block";
+    $(".commentBox")[readMoreButtonNumber].style.display = "block";
+    $(".likeCount")[readMoreButtonNumber].style.display = "block";
   });
+  $(".readLess")[readMoreButtonNumber].style.display = "block";
 }
 
 function trimContent(str) {
@@ -142,41 +146,50 @@ function trimContent(str) {
 }
 
 function likeCounter(likeButtonNumber) {
-
   if (localStorage.getItem("signed") == "true") {
     var retrievedObject = JSON.parse(localStorage.getItem("content"));
     likeCount = retrievedObject.articles[likeButtonNumber].likeCount;
     likeCount += 1;
     retrievedObject.articles[likeButtonNumber].likeCount = likeCount;
     localStorage.setItem("content", JSON.stringify(retrievedObject));
-    $.getJSON('json/content.json', function(data) {
-      console.log(data);
+    $.getJSON("json/content.json", function(data) {
       data.articles[likeButtonNumber].likeCount = likeCount;
       document.getElementsByClassName("counter")[likeButtonNumber].innerHTML = likeCount;
     });
-
   } else {
-    successPopup();
+    showPopUp();
   }
 }
 
 function postComment(commentBoxNumber) {
   if (localStorage.getItem("signed") == "true") {
-    comment = document.getElementsByClassName("commentBox")[commentBoxNumber].value;
-    var retrievedObject = JSON.parse(localStorage.getItem("content"));
-    $.getJSON('json/content.json', function(data) {
-      console.log(data);
-      var newComment = {
-        "comment": comment
-      };
-      newComment = JSON.stringify(newComment);
-      retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
-      localStorage.setItem("content", JSON.stringify(retrievedObject));
-      $(".allComments")[commentBoxNumber].innerHTML += " " + comment;
-
-    });
+    comment = $(".commentBox")[commentBoxNumber].value;
+    if (comment == "") {
+      $(".commentBox")[commentBoxNumber].setCustomValidity("Please type some comments");
+    } else {
+      var retrievedObject = JSON.parse(localStorage.getItem("content"));
+      $.getJSON("json/content.json", function(data) {
+        var newComment = {
+          "comment": comment
+        };
+        newComment = JSON.stringify(newComment);
+        retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
+        localStorage.setItem("content", JSON.stringify(retrievedObject));
+        var listNode = document.createElement("li");
+        var commentNode = document.createTextNode(comment);
+        listNode.appendChild(commentNode);
+        $(".allComments")[commentBoxNumber].append(listNode);
+      });
+    }
   } else {
-    successPopup();
+    showPopUp();
   }
 
+}
+
+function loadLessContent(readLessNumber) {
+  loadContent();
+  $(".likeClass").hide();
+  $(".readLess")[readLessNumber].style.display = "none";
+  $(".readMore")[readLessNumber].style.display = "block";
 }
