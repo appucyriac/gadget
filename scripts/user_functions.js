@@ -25,7 +25,6 @@ $(document).ready(function() {
   });
   $(".likeClass").hide();
   $.getJSON('json/content.json', function(data) {
-    debugger;
     if (localStorage.getItem("content") == null) {
       localStorage.setItem("content", JSON.stringify(data));
     } else {
@@ -34,7 +33,6 @@ $(document).ready(function() {
       for (var i = 0; i < data.articles.length; i++) {
         $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
         for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
-          debugger;
           $(".allComments")[i].innerHTML += jsonData.articles[i].comments[j].comment + ", ";
         }
       }
@@ -172,7 +170,6 @@ function postComment(commentBoxNumber) {
         "comment": comment
       };
       newComment = JSON.stringify(newComment);
-      debugger;
       retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
       localStorage.setItem("content", JSON.stringify(retrievedObject));
       $(".allComments")[commentBoxNumber].innerHTML += " " + comment;
