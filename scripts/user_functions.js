@@ -22,9 +22,6 @@ $(document).ready(function() {
   });
   $(".likeClass").hide();
   $(".readLess").hide();
-  
-
-  
 });
 
 function validateSignIn() {
@@ -89,28 +86,27 @@ function showPopUp() {
       message_popup.style.display = "none";
     }
   }
-
 }
 
 function loadContent() {
   var trimmed_content;
-  $.getJSON("json/content.json", function(data) {              
-      if (localStorage.getItem("content") == null) {
-        localStorage.setItem("content", JSON.stringify(data));
-      } else {
-        var jsonData = JSON.parse(localStorage.getItem("content"));
-        for (var i = 0; i < data.articles.length; i++) {
-          $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
-          for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
-            if (jsonData.articles[i].comments[j].comment != null) {
-              var listNode = document.createElement("li");
-              var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
-              listNode.appendChild(commentNode);
-              $(".allComments")[i].append(listNode);
-            }
+  $.getJSON("json/content.json", function(data) {
+    if (localStorage.getItem("content") == null) {
+      localStorage.setItem("content", JSON.stringify(data));
+    } else {
+      var jsonData = JSON.parse(localStorage.getItem("content"));
+      for (var i = 0; i < data.articles.length; i++) {
+        $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
+        for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
+          if (jsonData.articles[i].comments[j].comment != null) {
+            var listNode = document.createElement("li");
+            var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
+            listNode.appendChild(commentNode);
+            $(".allComments")[i].append(listNode);
           }
         }
-      }    
+      }
+    }
     for (var i = 0; i < data.articles.length; i += 1) {
       $(".article-title")[i].innerHTML = data.articles[i].title;
       trimmed_content = trimContent(data.articles[i].article);
@@ -180,7 +176,6 @@ function postComment(commentBoxNumber) {
   } else {
     showPopUp();
   }
-
 }
 
 function loadLessContent(readLessNumber) {
