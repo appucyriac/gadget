@@ -19,7 +19,12 @@ $(document).ready(function() {
     localStorage.setItem("signed", "false");
     $(".login-buttons").show();
     $(".logged-buttons").hide();
-  });  
+  });
+  $(".likeClass").hide();
+  $(".readLess").hide();
+  
+
+  
 });
 
 function validateSignIn() {
@@ -89,13 +94,7 @@ function showPopUp() {
 
 function loadContent() {
   var trimmed_content;
-  $(".likeClass").hide();
-  $(".readLess").hide();
-  $.getJSON("json/content.json", function(data) {
-    for (var i = 0; i < data.articles.length; i += 1) {
-      $(".article-title")[i].innerHTML = data.articles[i].title;
-      trimmed_content = trimContent(data.articles[i].article);
-      $(".article-content")[i].innerHTML = trimmed_content;          
+  $.getJSON("json/content.json", function(data) {              
       if (localStorage.getItem("content") == null) {
         localStorage.setItem("content", JSON.stringify(data));
       } else {
@@ -111,8 +110,11 @@ function loadContent() {
             }
           }
         }
-      }
-    
+      }    
+    for (var i = 0; i < data.articles.length; i += 1) {
+      $(".article-title")[i].innerHTML = data.articles[i].title;
+      trimmed_content = trimContent(data.articles[i].article);
+      $(".article-content")[i].innerHTML = trimmed_content;
     } //only trimmed contents are shown on the homepage
   });
 }
