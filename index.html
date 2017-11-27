@@ -18,20 +18,28 @@
             <div class="sub-header">
                 <nav>
                     <ul>
+                        <li><span style="font-size:30px;cursor:pointer" onclick="openNavigationBar()" class="navigation_bar">&#9776;</span></li>
                         <li><a class="menu" href="index.html">Home</a></li>
                         <li><a class="menu" href="contact/gadgetfreak_contact.html">Contact</a></li>
                         <li><a class="menu" href="about/gadgetfreak_about.html">About</a></li>
                         <li><a class="login-buttons" href="account/gadgetfreak_register.html" id="register">Sign Up</a></li>
                         <li><a class="login-buttons" href="account/gadgetfreak_signin.html" id="sigin">Sign In</a></li>
                         <li><a href="#" class="logged-buttons" id="logout">Logout</a></li>
-                        <li><a href="#" class="logged-buttons" id="user">Welcome, Appu</a></li>
-                    </ul>
+                        <li><a href="#" class="logged-buttons" id="userId">Welcome, Appu</a></li>
+                    </ul>                    
                 </nav>
+            </div>
+            <div id="sideNavigationBar" class="sidenav">
+             <a href="javascript:void(0)" class="sideNavCloseButton" onclick="closeNavigationBar()">&times;</a>
+             <a href="#" onclick="showNewsArticle()">News</a>
+             <a href="#" onclick="showReviewArticle()">Reviews</a>
+             <a href="#">Deals</a>
+             <a href="#">Top 5</a>
             </div>
         </header>
         <section class="content">
-            <article>
-                <img class="side-image" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&qlt=95&.v=1504378258086" width="100" height="170" alt="iPhone X">
+            <article class="news_article">
+                <img class="side-image" src="https://www.archlinux.org/static/vector_tux.864e6cdcc23e.png" width="100" height="170" alt="GNU/Linux logo">
                 <h2 class="article-title"></h2>
                 <p class="article-content first-article">
                 </p>
@@ -44,18 +52,32 @@
                 <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments">
                 <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(0)">Post</button>
             </article>
-            <article>
+            <article class="review_article">
+                <img class="side-image" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&qlt=95&.v=1504378258086" width="100" height="170" alt="iPhone X">
+                <h2 class="article-title"></h2>
+                <p class="article-content first-article">
+                </p>
+                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(1)">Read More...</button>
+                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(1)">Read Less...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClass likeButton" onclick="likeCounter(1)"/>
+                <p id="counterOne" class="likeClass likeCount counter">0</p>
+                <p class="commentHeader likeClass">Comments</p>
+                <li class="allComments likeClass"></li>
+                <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments">
+                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(1)">Post</button>
+            </article>
+            <article class=review_article>
                 <img class="side-image" src="https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=b1e52dd9252967784a9580c9de7ea7e3" width="140" height="170" alt="S8">
                 <h2 class="article-title"></h2>
                 <p class="article-content second-article"></p>
-                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(1)">Read More...</button>
-                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(1)">Read Less...</button>
-                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonTwo" class="likeClass likeButton" onclick="likeCounter(1)"/>
+                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(2)">Read More...</button>
+                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(2)">Read Less...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonTwo" class="likeClass likeButton" onclick="likeCounter(2)"/>
                 <p id="counterTwo" class="likeClass likeCount counter">0</p>
                 <p class="commentHeader likeClass">Comments</h2>
                 <li class="allComments likeClass"></li>
                 <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments" id="commentBoxId">
-                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(1)">Post</button>
+                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(2)">Post</button>
             </article>
         </section>
         <div id="messagePopUp" class="popUp">
