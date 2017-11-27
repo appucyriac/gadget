@@ -19,30 +19,7 @@ $(document).ready(function() {
     localStorage.setItem("signed", "false");
     $(".login-buttons").show();
     $(".logged-buttons").hide();
-  });
-  $(".likeClass").hide();
-  $(".readLess").hide();
-  if (window.location.href == "https://appucyriac.github.io/gadget/") {
-    $.getJSON("/gadget/json/content.json", function(data) {
-      if (localStorage.getItem("content") == null) {
-        localStorage.setItem("content", JSON.stringify(data));
-      } else {
-        var jsonData = JSON.parse(localStorage.getItem("content"));
-
-        for (var i = 0; i < data.articles.length; i++) {
-          $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
-          for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
-            if (jsonData.articles[i].comments[j].comment != null) {
-              var listNode = document.createElement("li");
-              var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
-              listNode.appendChild(commentNode);
-              $(".allComments")[i].append(listNode);
-            }
-          }
-        }
-      }
-    });
-  }
+  });  
 });
 
 function validateSignIn() {
@@ -112,11 +89,30 @@ function showPopUp() {
 
 function loadContent() {
   var trimmed_content;
+  $(".likeClass").hide();
+  $(".readLess").hide();
   $.getJSON("json/content.json", function(data) {
     for (var i = 0; i < data.articles.length; i += 1) {
       $(".article-title")[i].innerHTML = data.articles[i].title;
       trimmed_content = trimContent(data.articles[i].article);
-      $(".article-content")[i].innerHTML = trimmed_content;
+      $(".article-content")[i].innerHTML = trimmed_content;          
+      if (localStorage.getItem("content") == null) {
+        localStorage.setItem("content", JSON.stringify(data));
+      } else {
+        var jsonData = JSON.parse(localStorage.getItem("content"));
+        for (var i = 0; i < data.articles.length; i++) {
+          $(".counter")[i].innerHTML = jsonData.articles[i].likeCount;
+          for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
+            if (jsonData.articles[i].comments[j].comment != null) {
+              var listNode = document.createElement("li");
+              var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
+              listNode.appendChild(commentNode);
+              $(".allComments")[i].append(listNode);
+            }
+          }
+        }
+      }
+    
     } //only trimmed contents are shown on the homepage
   });
 }
