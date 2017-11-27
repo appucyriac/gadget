@@ -4,6 +4,7 @@ var password_field = $("#passwordField")[0],
   email_regex = /(.+)@(.+){2,}\.(.+){2,}/,
   likeCount = 0;
 
+
 $(document).ready(function() {
   var usr = localStorage.getItem("signed");
   if (usr == "true") {
@@ -22,24 +23,32 @@ $(document).ready(function() {
   });
   $(".likeClass").hide();
   $(".readLess").hide();
+  $("#userId")[0].innerHTML = "Welcome," + localStorage.getItem("user_name");
 });
 
 function validateSignIn() {
-  if (password_field.value == "123" && email_field.value == "appu@qburst.com") {
-    showPopUp();
-    password_field.setCustomValidity("You will be redirected shortly");
-    setTimeout(
-      function() {
-        window.location = "../index.html"
-      }, 2500);
-    if (stay_signed_in.checked) {
-      localStorage.setItem("signed", "true");
+
+  var retrievedObject = JSON.parse(localStorage.getItem("content"));
+  for (var i = 0; i < retrievedObject.user.length; i++) {
+    if (email_field.value == retrievedObject.user[i].email && password_field.value == retrievedObject.user[i].password) {
+      showPopUp();
+      password_field.setCustomValidity("You will be redirected shortly");
+      var user_name = email_field.value.slice(0, email_field.value.indexOf("@"));
+      localStorage.setItem("user_name", user_name);
+      setTimeout(
+        function() {
+          window.location = "../index.html"
+        }, 2500);
+      if (stay_signed_in.checked) {
+        localStorage.setItem("signed", "true");
+      } else {
+        $(".login-buttons").hide();
+        $(".logged-buttons").show();
+      }
+      break;
     } else {
-      $(".login-buttons").hide();
-      $(".logged-buttons").show();
+      password_field.setCustomValidity("Invalid User ID/Password");
     }
-  } else {
-    password_field.setCustomValidity("Invalid User ID/Password");
   }
 }
 
@@ -54,6 +63,16 @@ function validateSignUp() {
       if (password_field.value != confirm_password_field.value) {
         confirm_password_field.setCustomValidity("Passwords Don't Match");
       } else {
+        var retrievedObject = JSON.parse(localStorage.getItem("content"));
+
+        var newUser = {
+          "email": email_field.value,
+          "password": password_field.value
+        };
+        newUser = JSON.stringify(newUser);
+        retrievedObject.user.push(JSON.parse(newUser));
+        localStorage.setItem("content", JSON.stringify(retrievedObject));
+
         showPopUp();
         password_field.setCustomValidity("You will be redirected shortly");
         setTimeout(
@@ -100,7 +119,7 @@ function loadContent() {
         for (var j = 0; j < jsonData.articles[i].comments.length; j++) {
           if (jsonData.articles[i].comments[j].comment != null) {
             var listNode = document.createElement("li");
-            var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment);
+            var commentNode = document.createTextNode(jsonData.articles[i].comments[j].comment + "------" + jsonData.articles[i].comments[j].user);
             listNode.appendChild(commentNode);
             $(".allComments")[i].append(listNode);
           }
@@ -134,7 +153,6 @@ function trimContent(str) {
   var sub_str;
   sub_str = str.substring(0, 250);
   return sub_str;
-
 }
 
 function likeCounter(likeButtonNumber) {
@@ -162,13 +180,14 @@ function postComment(commentBoxNumber) {
       var retrievedObject = JSON.parse(localStorage.getItem("content"));
       $.getJSON("json/content.json", function(data) {
         var newComment = {
-          "comment": comment
+          "comment": comment,
+          "user": localStorage.getItem("user_name")
         };
         newComment = JSON.stringify(newComment);
         retrievedObject.articles[commentBoxNumber].comments.push(JSON.parse(newComment));
         localStorage.setItem("content", JSON.stringify(retrievedObject));
         var listNode = document.createElement("li");
-        var commentNode = document.createTextNode(comment);
+        var commentNode = document.createTextNode(comment + "-----" + localStorage.getItem("user_name"));
         listNode.appendChild(commentNode);
         $(".allComments")[commentBoxNumber].append(listNode);
       });
@@ -183,4 +202,23 @@ function loadLessContent(readLessNumber) {
   $(".likeClass").hide();
   $(".readLess")[readLessNumber].style.display = "none";
   $(".readMore")[readLessNumber].style.display = "block";
+}
+
+function openNavigationBar() {
+  $("#sideNavigationBar")[0].style.width = "200px";
+  
+}
+
+function closeNavigationBar() {
+  $("#sideNavigationBar")[0].style.width = "0";
+}
+function showReviewArticle()
+{
+  $(".news_article").hide();
+  $(".review_article").show();
+}
+function showNewsArticle()
+{
+  $(".review_article").hide();
+  $(".news_article").show();
 }
