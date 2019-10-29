@@ -1,83 +1,106 @@
 <!DOCTYPE html>
 <html>
- <head>
-	<link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/element_style.css">
-	<link rel="stylesheet" type="text/css" href="https://appucyriac.github.io/gadget/css/button.css">
-	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-	<title>Gadget Freak</title>
-
-
-	
- </head>
- <body>
-
-  <header>
-	    
-		<h1 id="main-title" style="font-family: 'Amatic SC', cursive;"">
-			G a d g e t   F r e a k
-		</h1>
-
-		
-    <ul>
-         <li><a class="active" href="https://appucyriac.github.io/gadget/index.html">Home</a></li>
-         <li><a href="https://appucyriac.github.io/gadget/contact/gadgetfreak_contact.html">Contact</a></li>
-         <li><a href="https://appucyriac.github.io/gadget/about/gadgetfreak_about.html">About</a></li>
-         <bi><a href="https://appucyriac.github.io/gadget/account/gadgetfreak_register.html">Sign Up</a></bi>
-         <bi><a href="https://appucyriac.github.io/gadget/account/gadgetfreak_signin.html">Sign In</a></bi>
-        </ul>       
-																		
-	    
-  </header>
-    
-    <div class="b">
-       
-    <img id ="sideimage" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&qlt=95&.v=1504378258086" align="left"  width="100px" height="170px">
-	<h2>iPhone X : Review</h2>   
-	<article>
-    	Welcome to my ongoing impressions of the iPhone X. 
-
-        I've entered my third full day with the phone. Day 2 was mostly a blur of media hits, after a nearly sleepless night. Everything you're reading here is new as of the afternoon of Wednesday, November 1. 
-
-        I'm a pretty quick adopter of weird, new tech. The iPhone X isn't even that weird: it's really an evolved iPhone, with a sharp design and some new ways to use it. But I found, sure enough, that my first day with Apple's top-end phone was a learning process. Face ID and its log-in process. All the new swipes and gestures and button-presses. Learning to accept The Notch In The Screen.
-    </article>
-    </div>
-    
-    <br>
-    
-    
-  <div class="b">
-    	
-    <img id="sideimage" src="https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=b1e52dd9252967784a9580c9de7ea7e3" align="left"  width="140px" height="170px">
-    
-    <h2>Galaxy S8 : Review</h2>
-    
-    
-    <article>
-    	
-        It’s been a few months since the Samsung Galaxy S8 hit shelves, and it’s fair to say it’s changes phones a bit. Since Samsung unleashed its 2017 flagships the edge-to-edge design it started has spread. Now the Google Pixel 2 XL, iPhone X, LG V30 and Huawei Mate 10 Pro have it. But is the S8 still king?
-
-
-
-
-    </article>
-    
-  
-   </div>
-  <footer>
-	   <h4>Copyright  © 2017 Gadget Freak Tech. All rights reserved.</h4>
-	   <div class="share">
-	   	<a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/element_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Gadget Freak: Home</title>
+</head>
+<body onload="loadContent()">
+    <main id="main_block">
+        <header class="global-header">
+            <h1 id="main_title">
+              G a d g e t   F r e a k
+            </h1>
+            <div class="sub-header">
+                <nav>
+                    <ul>
+                        <li><span style="font-size:30px;cursor:pointer" onclick="openNavigationBar()" class="navigation_bar">&#9776;</span></li>
+                        <li><a class="menu" href="index.html">Home</a></li>
+                        <li><a class="menu" href="contact/gadgetfreak_contact.html">Contact</a></li>
+                        <li><a class="menu" href="about/gadgetfreak_about.html">About</a></li>
+                        <li><a class="login-buttons" href="account/gadgetfreak_register.html" id="register">Sign Up</a></li>
+                        <li><a class="login-buttons" href="account/gadgetfreak_signin.html" id="sigin">Sign In</a></li>
+                        <li><a href="#" class="logged-buttons" id="logout">Logout</a></li>
+                        <li><a href="#" class="logged-buttons" id="userId">Welcome, Appu</a></li>
+                    </ul>                    
+                </nav>
+            </div>
+            <div id="sideNavigationBar" class="sidenav">
+             <a href="javascript:void(0)" class="sideNavCloseButton" onclick="closeNavigationBar()">&times;</a>
+             <a href="#" onclick="showNewsArticle()">News</a>
+             <a href="#" onclick="showReviewArticle()">Reviews</a>
+             <a href="#">Deals</a>
+             <a href="#">Top 5</a>
+            </div>
+        </header>
+        <section class="content">
+            <article class="news_article">
+                <img class="side-image" src="https://www.archlinux.org/static/vector_tux.864e6cdcc23e.png" width="100" height="170" alt="GNU/Linux logo">
+                <h2 class="article-title"></h2>
+                <p class="article-content first-article">
+                </p>
+                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(0)">Read More...</button>
+                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(0)">Read Less...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClass likeButton" onclick="likeCounter(0)"/>
+                <p id="counterOne" class="likeClass likeCount counter">0</p>
+                <p class="commentHeader likeClass">Comments</p>
+                <li class="allComments likeClass"></li>
+                <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments">
+                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(0)">Post</button>
+            </article>
+            <article class="review_article">
+                <img class="side-image" src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-select-2017?wid=189&hei=376&fmt=png-alpha&qlt=95&.v=1504378258086" width="100" height="170" alt="iPhone X">
+                <h2 class="article-title"></h2>
+                <p class="article-content first-article">
+                </p>
+                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(1)">Read More...</button>
+                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(1)">Read Less...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonOne" class="likeClass likeButton" onclick="likeCounter(1)"/>
+                <p id="counterOne" class="likeClass likeCount counter">0</p>
+                <p class="commentHeader likeClass">Comments</p>
+                <li class="allComments likeClass"></li>
+                <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments">
+                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(1)">Post</button>
+            </article>
+            <article class=review_article>
+                <img class="side-image" src="https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=b1e52dd9252967784a9580c9de7ea7e3" width="140" height="170" alt="S8">
+                <h2 class="article-title"></h2>
+                <p class="article-content second-article"></p>
+                <button id="read_more" class="readMoreButton readMore" onclick="loadFullContent(2)">Read More...</button>
+                <button id="read_less" class="readMoreButton readLess" onclick="loadLessContent(2)">Read Less...</button>
+                <input type="image" src="https://www.intellishredus.com/wp-content/uploads/2017/08/thumbs-up-hard-drive-destruction-service.png" id="likeButtonTwo" class="likeClass likeButton" onclick="likeCounter(2)"/>
+                <p id="counterTwo" class="likeClass likeCount counter">0</p>
+                <p class="commentHeader likeClass">Comments</h2>
+                <li class="allComments likeClass"></li>
+                <input type="comments" class="commentBox likeClass" required placeholder="Type in your comments" id="commentBoxId">
+                <button type="submit" name="post" class="globalButton postButton likeClass"  onclick="postComment(2)">Post</button>
+            </article>
+        </section>
+        <div id="messagePopUp" class="popUp">
+            <div class="popUp-content">
+                <span class="closeButton">&times;</span>
+                <h4>Please sign in to your account</h4>
+            </div>
+        </div>
+    </main>
+    <footer class="global-footer">
+        <p>Copyright © 2017 Gadget Freak Tech. All rights reserved.</p>
+        <div class="share">
+         <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+         </a>
+         <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+         </a>
+         <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+         <img class="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
         </a>
-        <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-        </a>
-        <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-         <img id="social" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-        </a>
-	   </div>
-  </footer>
- </body>
+        </div>
+    </footer>
+    <script type="text/javascript" src="scripts/user_functions.js"></script>
+</body>
 </html>
